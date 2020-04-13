@@ -1,0 +1,80 @@
+api = "0.2"
+
+[buildpack]
+  id = "paketo-buildpacks/php"
+  name = "PHP Buildpack"
+  version = "{{.Version}}"
+
+[metadata]
+  dependency_deprecation_dates = []
+  include_files = ["buildpack.toml"]
+
+  [[metadata.dependencies]]
+    id = "paketo-buildpacks/httpd"
+    sha256 = "bc45a39e03245deb9294da9f7ff9c1e884208da9a4afd79f7572c5e734610258"
+    source = "https://github.com/cloudfoundry/httpd-cnb/archive/v0.0.107.tar.gz"
+    source_sha256 = "9df0685f431533200a05d395ca6ac14bae21b03c942cc9084f43e736da19c114"
+    stacks = ["io.buildpacks.stacks.bionic", "org.cloudfoundry.stacks.cflinuxfs3"]
+    uri = "https://buildpacks.cloudfoundry.org/dependencies/org.cloudfoundry.httpd/org.cloudfoundry.httpd_0.0.107_linux_noarch_any-stack_bc45a39e.tgz"
+    version = "0.0.107"
+
+  [[metadata.dependencies]]
+    id = "paketo-buildpacks/nginx"
+    sha256 = "2d2a28a9c530b87c73d8939482153ac83c5633937bdad7429f2de40567199e95"
+    source = "https://github.com/cloudfoundry/nginx-cnb/archive/v0.0.110.tar.gz"
+    source_sha256 = "f847f54c204113fbf5dab7346c935dad86204c9f09cb880f14bc8a7b0febc7d2"
+    stacks = ["io.buildpacks.stacks.bionic", "org.cloudfoundry.stacks.cflinuxfs3"]
+    uri = "https://buildpacks.cloudfoundry.org/dependencies/org.cloudfoundry.nginx/org.cloudfoundry.nginx_0.0.110_linux_noarch_any-stack_2d2a28a9.tgz"
+    version = "0.0.110"
+
+  [[metadata.dependencies]]
+    id = "paketo-buildpacks/php-composer"
+    sha256 = "7c628602c098e03f058c004cdca3cf1466031289ef5c9a19f4b2156017015fcc"
+    source = "https://github.com/cloudfoundry/php-composer-cnb/archive/v0.0.65.tar.gz"
+    source_sha256 = "e3b7635cc20693635f37ef566f0b2abe0d818dad99c10f5cc39f7a83ebd3dc40"
+    stacks = ["io.buildpacks.stacks.bionic", "org.cloudfoundry.stacks.cflinuxfs3"]
+    uri = "https://buildpacks.cloudfoundry.org/dependencies/org.cloudfoundry.php-composer/org.cloudfoundry.php-composer_0.0.65_linux_noarch_any-stack_7c628602.tgz"
+    version = "0.0.65"
+
+  [[metadata.dependencies]]
+    id = "paketo-buildpacks/php-dist"
+    sha256 = "083c4563d8acb9aaa5fb3ddfce3298f6c538c41be2eea5bc896a64960b9cdd56"
+    source = "https://github.com/cloudfoundry/php-dist-cnb/archive/v0.0.135.tar.gz"
+    source_sha256 = "3658cacaa630d90c6f1e5a9edf9ea7e09a16002a8b2d97d9e26a94cd7f42b9f5"
+    stacks = ["org.cloudfoundry.stacks.cflinuxfs3"]
+    uri = "https://buildpacks.cloudfoundry.org/dependencies/org.cloudfoundry.php-dist/org.cloudfoundry.php-dist_0.0.135_linux_noarch_cflinuxfs3_083c4563.tgz"
+    version = "0.0.135"
+
+  [[metadata.dependencies]]
+    id = "paketo-buildpacks/php-web"
+    sha256 = "5c126c257c6c5cc955da20d5f4113f3aaf33883b309b0bb3412d7b4f627af103"
+    source = "https://github.com/cloudfoundry/php-web-cnb/archive/v0.0.93.tar.gz"
+    source_sha256 = "365033abdba5c3c482fabfb92fe5717bd0f2dbc6b12c366371eecaf6182c4a9c"
+    stacks = ["io.buildpacks.stacks.bionic", "org.cloudfoundry.stacks.cflinuxfs3"]
+    uri = "https://buildpacks.cloudfoundry.org/dependencies/org.cloudfoundry.php-web/org.cloudfoundry.php-web_0.0.93_linux_noarch_any-stack_5c126c25.tgz"
+    version = "0.0.93"
+
+[[order]]
+
+  [[order.group]]
+    id = "paketo-buildpacks/httpd"
+    version = "0.0.107"
+    optional = true
+
+  [[order.group]]
+    id = "paketo-buildpacks/nginx"
+    version = "0.0.110"
+    optional = true
+
+  [[order.group]]
+    id = "paketo-buildpacks/php-dist"
+    version = "0.0.135"
+
+  [[order.group]]
+    id = "paketo-buildpacks/php-composer"
+    version = "0.0.65"
+    optional = true
+
+  [[order.group]]
+    id = "paketo-buildpacks/php-web"
+    version = "0.0.93"
