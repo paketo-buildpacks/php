@@ -4,6 +4,7 @@ api = "0.2"
   id = "paketo-buildpacks/php"
   name = "PHP Buildpack"
   version = "{{.Version}}"
+  homepage = "https://github.com/paketo-buildpacks/php"
 
 [metadata]
   dependency_deprecation_dates = []
