@@ -1,13 +1,12 @@
 api = "0.2"
 
 [buildpack]
+  homepage = "https://github.com/paketo-buildpacks/php"
   id = "paketo-buildpacks/php"
   name = "PHP Buildpack"
   version = "{{.Version}}"
-  homepage = "https://github.com/paketo-buildpacks/php"
 
 [metadata]
-  dependency_deprecation_dates = []
   include_files = ["buildpack.toml"]
 
   [[metadata.dependencies]]
@@ -48,12 +47,12 @@ api = "0.2"
 
   [[metadata.dependencies]]
     id = "paketo-buildpacks/php-web"
-    sha256 = "5c126c257c6c5cc955da20d5f4113f3aaf33883b309b0bb3412d7b4f627af103"
-    source = "https://github.com/cloudfoundry/php-web-cnb/archive/v0.0.93.tar.gz"
-    source_sha256 = "365033abdba5c3c482fabfb92fe5717bd0f2dbc6b12c366371eecaf6182c4a9c"
-    stacks = ["io.buildpacks.stacks.bionic", "org.cloudfoundry.stacks.cflinuxfs3"]
-    uri = "https://buildpacks.cloudfoundry.org/dependencies/org.cloudfoundry.php-web/org.cloudfoundry.php-web_0.0.93_linux_noarch_any-stack_5c126c25.tgz"
-    version = "0.0.93"
+    sha256 = "d34b7911e2592c193c03d5a8d7cc096da9575b7dc2d8c3a1dc75b3c0f38621df"
+    source = "https://github.com/paketo-buildpacks/php-web/archive/v0.0.107.tar.gz"
+    source_sha256 = "cf6becb2d83306ef76b502f2fcb6341675d6f4f8a491ca87bc7bc0c4d24f0c59"
+    stacks = ["org.cloudfoundry.stacks.cflinuxfs3", "io.buildpacks.stacks.bionic"]
+    uri = "https://github.com/paketo-buildpacks/php-web/releases/download/v0.0.107/php-web-0.0.107.tgz"
+    version = "0.0.107"
 
 [[order]]
 
@@ -78,4 +77,4 @@ api = "0.2"
 
   [[order.group]]
     id = "paketo-buildpacks/php-web"
-    version = "0.0.93"
+    version = "0.0.107"
