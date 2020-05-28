@@ -1,13 +1,12 @@
 api = "0.2"
 
 [buildpack]
+  homepage = "https://github.com/paketo-buildpacks/php"
   id = "paketo-buildpacks/php"
   name = "PHP Buildpack"
   version = "{{.Version}}"
-  homepage = "https://github.com/paketo-buildpacks/php"
 
 [metadata]
-  dependency_deprecation_dates = []
   include_files = ["buildpack.toml"]
 
   [[metadata.dependencies]]
@@ -39,12 +38,12 @@ api = "0.2"
 
   [[metadata.dependencies]]
     id = "paketo-buildpacks/php-dist"
-    sha256 = "083c4563d8acb9aaa5fb3ddfce3298f6c538c41be2eea5bc896a64960b9cdd56"
-    source = "https://github.com/cloudfoundry/php-dist-cnb/archive/v0.0.135.tar.gz"
-    source_sha256 = "3658cacaa630d90c6f1e5a9edf9ea7e09a16002a8b2d97d9e26a94cd7f42b9f5"
+    sha256 = "3d8b529a335167c130c83da65523996d98fb6f819236f2fdfc19cdce0e1afdcb"
+    source = "https://github.com/paketo-buildpacks/php-dist/archive/v0.0.157.tar.gz"
+    source_sha256 = "41df148e18c96e2228949007c29eec1909d177c3825235922c99734b7dbc86d6"
     stacks = ["org.cloudfoundry.stacks.cflinuxfs3"]
-    uri = "https://buildpacks.cloudfoundry.org/dependencies/org.cloudfoundry.php-dist/org.cloudfoundry.php-dist_0.0.135_linux_noarch_cflinuxfs3_083c4563.tgz"
-    version = "0.0.135"
+    uri = "https://github.com/paketo-buildpacks/php-dist/releases/download/v0.0.157/php-dist-0.0.157.tgz"
+    version = "0.0.157"
 
   [[metadata.dependencies]]
     id = "paketo-buildpacks/php-web"
@@ -69,7 +68,7 @@ api = "0.2"
 
   [[order.group]]
     id = "paketo-buildpacks/php-dist"
-    version = "0.0.135"
+    version = "0.0.157"
 
   [[order.group]]
     id = "paketo-buildpacks/php-composer"
