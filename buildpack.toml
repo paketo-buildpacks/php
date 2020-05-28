@@ -1,13 +1,12 @@
 api = "0.2"
 
 [buildpack]
+  homepage = "https://github.com/paketo-buildpacks/php"
   id = "paketo-buildpacks/php"
   name = "PHP Buildpack"
   version = "{{.Version}}"
-  homepage = "https://github.com/paketo-buildpacks/php"
 
 [metadata]
-  dependency_deprecation_dates = []
   include_files = ["buildpack.toml"]
 
   [[metadata.dependencies]]
@@ -21,12 +20,12 @@ api = "0.2"
 
   [[metadata.dependencies]]
     id = "paketo-buildpacks/nginx"
-    sha256 = "2d2a28a9c530b87c73d8939482153ac83c5633937bdad7429f2de40567199e95"
-    source = "https://github.com/cloudfoundry/nginx-cnb/archive/v0.0.110.tar.gz"
-    source_sha256 = "f847f54c204113fbf5dab7346c935dad86204c9f09cb880f14bc8a7b0febc7d2"
-    stacks = ["io.buildpacks.stacks.bionic", "org.cloudfoundry.stacks.cflinuxfs3"]
-    uri = "https://buildpacks.cloudfoundry.org/dependencies/org.cloudfoundry.nginx/org.cloudfoundry.nginx_0.0.110_linux_noarch_any-stack_2d2a28a9.tgz"
-    version = "0.0.110"
+    sha256 = "354eb04554271ec5f9f28d4e6b490ab522df2010a588114ed46b75783846be72"
+    source = "https://github.com/paketo-buildpacks/nginx/archive/v0.0.147.tar.gz"
+    source_sha256 = "83effac863894e9d4a3f04516c87804cd89f7b07eb28ba2e1110b585d4fcba91"
+    stacks = ["org.cloudfoundry.stacks.cflinuxfs3", "io.buildpacks.stacks.bionic"]
+    uri = "https://github.com/paketo-buildpacks/nginx/releases/download/v0.0.147/nginx-0.0.147.tgz"
+    version = "0.0.147"
 
   [[metadata.dependencies]]
     id = "paketo-buildpacks/php-composer"
@@ -64,7 +63,7 @@ api = "0.2"
 
   [[order.group]]
     id = "paketo-buildpacks/nginx"
-    version = "0.0.110"
+    version = "0.0.147"
     optional = true
 
   [[order.group]]
