@@ -29,12 +29,12 @@ api = "0.2"
 
   [[metadata.dependencies]]
     id = "paketo-buildpacks/php-composer"
-    sha256 = "844149a3a137754e4ce649522a94769177e1af4daabc866169c264fa11009e96"
-    source = "https://github.com/paketo-buildpacks/php-composer/archive/v0.0.90.tar.gz"
-    source_sha256 = "5855d8f700941bc6dd01c475df05419d9229fb1baa65d1838fbfd66abd58b9fc"
+    sha256 = "871cedc4cba7553a64109c10c0b8ba49c30059fbbf95418eecfcc99095aa9e18"
+    source = "https://github.com/paketo-buildpacks/php-composer/archive/v0.0.92.tar.gz"
+    source_sha256 = "031866fa38d23fe2cb38dd8bc9ab6943b0d13f9f4f11521ae0924e1f72d30ea5"
     stacks = ["org.cloudfoundry.stacks.cflinuxfs3", "io.buildpacks.stacks.bionic"]
-    uri = "https://github.com/paketo-buildpacks/php-composer/releases/download/v0.0.90/php-composer-0.0.90.tgz"
-    version = "0.0.90"
+    uri = "https://github.com/paketo-buildpacks/php-composer/releases/download/v0.0.92/php-composer-0.0.92.tgz"
+    version = "0.0.92"
 
   [[metadata.dependencies]]
     id = "paketo-buildpacks/php-dist"
@@ -72,7 +72,7 @@ api = "0.2"
 
   [[order.group]]
     id = "paketo-buildpacks/php-composer"
-    version = "0.0.90"
+    version = "0.0.92"
     optional = true
 
   [[order.group]]
