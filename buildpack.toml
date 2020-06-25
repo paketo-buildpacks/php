@@ -11,12 +11,12 @@ api = "0.2"
 
   [[metadata.dependencies]]
     id = "paketo-buildpacks/httpd"
-    sha256 = "2186136937df7169b86e490ea8accc3ba7391aee2da785e84cc641ddeeddaf41"
-    source = "https://github.com/paketo-buildpacks/httpd/archive/v0.0.135.tar.gz"
-    source_sha256 = "9189f958af3bba944c212e5be692e90df94481d737f3cd1423027cfc868ec174"
-    stacks = ["org.cloudfoundry.stacks.cflinuxfs3", "io.buildpacks.stacks.bionic"]
-    uri = "https://github.com/paketo-buildpacks/httpd/releases/download/v0.0.135/httpd-0.0.135.tgz"
-    version = "0.0.135"
+    sha256 = "83ddad72a751fb3ec751529624b00faf09ffbd0487a6de99b63f85cfcfaad362"
+    source = "https://github.com/paketo-buildpacks/httpd/archive/v0.0.140.tar.gz"
+    source_sha256 = "2f4f8dd4dfccb3f5913d0268cdefa50d1d9da0450e9376d9cf06b73045625533"
+    stacks = ["io.buildpacks.stacks.bionic", "org.cloudfoundry.stacks.cflinuxfs3"]
+    uri = "https://github.com/paketo-buildpacks/httpd/releases/download/v0.0.140/httpd-0.0.140.tgz"
+    version = "0.0.140"
 
   [[metadata.dependencies]]
     id = "paketo-buildpacks/nginx"
@@ -58,7 +58,7 @@ api = "0.2"
 
   [[order.group]]
     id = "paketo-buildpacks/httpd"
-    version = "0.0.135"
+    version = "0.0.140"
     optional = true
 
   [[order.group]]
