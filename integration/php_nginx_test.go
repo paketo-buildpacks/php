@@ -44,8 +44,7 @@ func testPhpNginx(t *testing.T, context spec.G, it spec.S) {
 
 		it.After(func() {
 			Expect(docker.Container.Remove.Execute(container.ID)).To(Succeed())
-			fmt.Printf("test image name %s\n", image.ID)
-			// Expect(docker.Image.Remove.Execute(image.ID)).To(Succeed())
+			Expect(docker.Image.Remove.Execute(image.ID)).To(Succeed())
 			Expect(docker.Volume.Remove.Execute(occam.CacheVolumeNames(name))).To(Succeed())
 		})
 
