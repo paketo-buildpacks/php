@@ -20,12 +20,12 @@ api = "0.2"
 
   [[metadata.dependencies]]
     id = "paketo-buildpacks/nginx"
-    sha256 = "44d5a5291a58107a7d0a91a156ce4fa1454370391f903156cb51dd71c9b2711f"
-    source = "https://github.com/paketo-buildpacks/nginx/archive/v0.0.164.tar.gz"
-    source_sha256 = "b5af05a9147b4743373696b9472b4b7a573df28fc5888134d3813ed3f7b5b7bd"
+    sha256 = "61779edb2ba7ebc0f9ac98b022c6244e9ef99bc96d860e942fd30b34de90d72b"
+    source = "https://github.com/paketo-buildpacks/nginx/archive/v0.0.166.tar.gz"
+    source_sha256 = "3fbb8d5a880895d860f7ba2cb23d021a07620c640f16a0ef99a5c220bd804134"
     stacks = ["io.buildpacks.stacks.bionic", "org.cloudfoundry.stacks.cflinuxfs3"]
-    uri = "https://github.com/paketo-buildpacks/nginx/releases/download/v0.0.164/nginx-0.0.164.tgz"
-    version = "0.0.164"
+    uri = "https://github.com/paketo-buildpacks/nginx/releases/download/v0.0.166/nginx-0.0.166.tgz"
+    version = "0.0.166"
 
   [[metadata.dependencies]]
     id = "paketo-buildpacks/php-composer"
@@ -63,7 +63,7 @@ api = "0.2"
 
   [[order.group]]
     id = "paketo-buildpacks/nginx"
-    version = "0.0.164"
+    version = "0.0.166"
     optional = true
 
   [[order.group]]
