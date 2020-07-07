@@ -47,12 +47,12 @@ api = "0.2"
 
   [[metadata.dependencies]]
     id = "paketo-buildpacks/php-web"
-    sha256 = "a1a629c044a887877b6b4b1635335b5e38ddc26e4ce1db640cc7f56ec878d06c"
-    source = "https://github.com/paketo-buildpacks/php-web/archive/v0.0.111.tar.gz"
-    source_sha256 = "9d3e81b2f74fbd5923eea3f5c56022d651697bebb7a17c32b2ff4b651d140a1b"
+    sha256 = "97322c7b42f358f20a5a09dc36d85627a3ec4c6081a74041b2097bc865dbc840"
+    source = "https://github.com/paketo-buildpacks/php-web/archive/v0.0.113.tar.gz"
+    source_sha256 = "cedd6a4771d6f20a44f0bb2bdace2fecfdb830cc2abf84aa64d1253d36bb9bb5"
     stacks = ["org.cloudfoundry.stacks.cflinuxfs3", "io.buildpacks.stacks.bionic"]
-    uri = "https://github.com/paketo-buildpacks/php-web/releases/download/v0.0.111/php-web-0.0.111.tgz"
-    version = "0.0.111"
+    uri = "https://github.com/paketo-buildpacks/php-web/releases/download/v0.0.113/php-web-0.0.113.tgz"
+    version = "0.0.113"
 
 [[order]]
 
@@ -77,4 +77,4 @@ api = "0.2"
 
   [[order.group]]
     id = "paketo-buildpacks/php-web"
-    version = "0.0.111"
+    version = "0.0.113"
