@@ -38,12 +38,12 @@ api = "0.2"
 
   [[metadata.dependencies]]
     id = "paketo-buildpacks/php-dist"
-    sha256 = "55aa03feaabd316de08d74f74873e91d88e0d2f833cc04f0fcd3ac650902d701"
-    source = "https://github.com/paketo-buildpacks/php-dist/archive/v0.0.173.tar.gz"
-    source_sha256 = "b414c73998ce70ca72ebdfce354f637c627b615fa6da1a2780ff9cd21d821cf0"
+    sha256 = "610dc14d00e1c6723f7f7d7aaecf097c82d96e5309bfe8081d06ad8923a1d5d6"
+    source = "https://github.com/paketo-buildpacks/php-dist/archive/v0.0.176.tar.gz"
+    source_sha256 = "d0aa8ae665ba6084dd8d2abdfebf37bf14030693760a1a29813e5e142f996074"
     stacks = ["io.buildpacks.stacks.bionic", "org.cloudfoundry.stacks.cflinuxfs3"]
-    uri = "https://github.com/paketo-buildpacks/php-dist/releases/download/v0.0.173/php-dist-0.0.173.tgz"
-    version = "0.0.173"
+    uri = "https://github.com/paketo-buildpacks/php-dist/releases/download/v0.0.176/php-dist-0.0.176.tgz"
+    version = "0.0.176"
 
   [[metadata.dependencies]]
     id = "paketo-buildpacks/php-web"
@@ -68,7 +68,7 @@ api = "0.2"
 
   [[order.group]]
     id = "paketo-buildpacks/php-dist"
-    version = "0.0.173"
+    version = "0.0.176"
 
   [[order.group]]
     id = "paketo-buildpacks/php-composer"
