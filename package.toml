@@ -1,0 +1,17 @@
+[buildpack]
+  uri = "build/buildpack.tgz"
+
+[[dependencies]]
+  image = "gcr.io/paketo-buildpacks/httpd:0.0.145"
+
+[[dependencies]]
+  image = "gcr.io/paketo-buildpacks/nginx:0.0.170"
+
+[[dependencies]]
+  image = "gcr.io/paketo-buildpacks/php-composer:0.0.99"
+
+[[dependencies]]
+  image = "gcr.io/paketo-buildpacks/php-dist:0.0.181"
+
+[[dependencies]]
+  image = "gcr.io/paketo-buildpacks/php-web:0.0.115"
