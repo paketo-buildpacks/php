@@ -9,72 +9,27 @@ api = "0.2"
 [metadata]
   include_files = ["buildpack.toml"]
 
-  [[metadata.dependencies]]
-    id = "paketo-buildpacks/httpd"
-    sha256 = "3f5378b4cd0860907d2a7c42791495fec9d4d64c9686a71a3cad67c584c14351"
-    source = "https://github.com/paketo-buildpacks/httpd/archive/v0.0.144.tar.gz"
-    source_sha256 = "a9393d185885c4840c00e53b6894927c6d6640501dc1ac3d25c737d375d8a246"
-    stacks = ["io.buildpacks.stacks.bionic", "org.cloudfoundry.stacks.cflinuxfs3"]
-    uri = "https://github.com/paketo-buildpacks/httpd/releases/download/v0.0.144/httpd-0.0.144.tgz"
-    version = "0.0.144"
-
-  [[metadata.dependencies]]
-    id = "paketo-buildpacks/nginx"
-    sha256 = "66a00c270c2459b08d36de756be172be3973a2d134eb9b8756eac9e942ebbaab"
-    source = "https://github.com/paketo-buildpacks/nginx/archive/v0.0.168.tar.gz"
-    source_sha256 = "e3723c8f48712bacfb82baecfcc81cdf764f52fba7948d8d1b8bbb587d61f407"
-    stacks = ["io.buildpacks.stacks.bionic", "org.cloudfoundry.stacks.cflinuxfs3"]
-    uri = "https://github.com/paketo-buildpacks/nginx/releases/download/v0.0.168/nginx-0.0.168.tgz"
-    version = "0.0.168"
-
-  [[metadata.dependencies]]
-    id = "paketo-buildpacks/php-composer"
-    sha256 = "f9bbb00eabfa494ac251bbe5c7e23a3e1ba660e24bfb507f388518cd5a9130f9"
-    source = "https://github.com/paketo-buildpacks/php-composer/archive/v0.0.98.tar.gz"
-    source_sha256 = "4403fe5a7db66b027926d00b794a6e02eb33ee3e209165392a0e7ed9a6d145db"
-    stacks = ["io.buildpacks.stacks.bionic", "org.cloudfoundry.stacks.cflinuxfs3"]
-    uri = "https://github.com/paketo-buildpacks/php-composer/releases/download/v0.0.98/php-composer-0.0.98.tgz"
-    version = "0.0.98"
-
-  [[metadata.dependencies]]
-    id = "paketo-buildpacks/php-dist"
-    sha256 = "76af5398750ac5111f6816dcfea5b731ff6e70ea57abad1655ce52fcc6105a32"
-    source = "https://github.com/paketo-buildpacks/php-dist/archive/v0.0.178.tar.gz"
-    source_sha256 = "5faccab7ada8b04299ed73f2069a296fdad61632ba47992896105f959aff72d3"
-    stacks = ["io.buildpacks.stacks.bionic", "org.cloudfoundry.stacks.cflinuxfs3"]
-    uri = "https://github.com/paketo-buildpacks/php-dist/releases/download/v0.0.178/php-dist-0.0.178.tgz"
-    version = "0.0.178"
-
-  [[metadata.dependencies]]
-    id = "paketo-buildpacks/php-web"
-    sha256 = "97322c7b42f358f20a5a09dc36d85627a3ec4c6081a74041b2097bc865dbc840"
-    source = "https://github.com/paketo-buildpacks/php-web/archive/v0.0.113.tar.gz"
-    source_sha256 = "cedd6a4771d6f20a44f0bb2bdace2fecfdb830cc2abf84aa64d1253d36bb9bb5"
-    stacks = ["org.cloudfoundry.stacks.cflinuxfs3", "io.buildpacks.stacks.bionic"]
-    uri = "https://github.com/paketo-buildpacks/php-web/releases/download/v0.0.113/php-web-0.0.113.tgz"
-    version = "0.0.113"
-
 [[order]]
 
   [[order.group]]
     id = "paketo-buildpacks/httpd"
-    version = "0.0.144"
+    version = "0.0.145"
     optional = true
 
   [[order.group]]
     id = "paketo-buildpacks/nginx"
-    version = "0.0.168"
+    version = "0.0.170"
     optional = true
 
   [[order.group]]
     id = "paketo-buildpacks/php-dist"
-    version = "0.0.178"
+    version = "0.0.181"
 
   [[order.group]]
     id = "paketo-buildpacks/php-composer"
-    version = "0.0.98"
+    version = "0.0.99"
     optional = true
 
   [[order.group]]
     id = "paketo-buildpacks/php-web"
-    version = "0.0.113"
+    version = "0.0.115"
