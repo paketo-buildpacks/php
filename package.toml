@@ -2,7 +2,7 @@
   uri = "build/buildpack.tgz"
 
 [[dependencies]]
-  image = "gcr.io/paketo-buildpacks/httpd:0.0.147"
+  image = "gcr.io/paketo-buildpacks/httpd:0.0.148"
 
 [[dependencies]]
   image = "gcr.io/paketo-buildpacks/nginx:0.0.173"
