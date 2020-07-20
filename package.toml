@@ -8,7 +8,7 @@
   image = "gcr.io/paketo-buildpacks/nginx:0.0.173"
 
 [[dependencies]]
-  image = "gcr.io/paketo-buildpacks/php-composer:0.0.102"
+  image = "gcr.io/paketo-buildpacks/php-composer:0.0.105"
 
 [[dependencies]]
   image = "gcr.io/paketo-buildpacks/php-dist:0.0.186"
