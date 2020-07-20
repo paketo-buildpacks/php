@@ -23,7 +23,7 @@ api = "0.2"
 
   [[order.group]]
     id = "paketo-buildpacks/php-dist"
-    version = "0.0.186"
+    version = "0.0.187"
 
   [[order.group]]
     id = "paketo-buildpacks/php-composer"
