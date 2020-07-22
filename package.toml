@@ -11,7 +11,7 @@
   image = "gcr.io/paketo-buildpacks/php-composer:0.0.105"
 
 [[dependencies]]
-  image = "gcr.io/paketo-buildpacks/php-dist:0.0.188"
+  image = "gcr.io/paketo-buildpacks/php-dist:0.0.189"
 
 [[dependencies]]
   image = "gcr.io/paketo-buildpacks/php-web:0.0.118"
