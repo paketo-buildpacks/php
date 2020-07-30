@@ -1,0 +1,3 @@
+{
+  "builder":"index.docker.io/paketobuildpacks/builder:full-cf"
+}
