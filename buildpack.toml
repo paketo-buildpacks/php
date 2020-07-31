@@ -32,4 +32,4 @@ api = "0.2"
 
   [[order.group]]
     id = "paketo-buildpacks/php-web"
-    version = "0.0.125"
+    version = "0.0.126"
