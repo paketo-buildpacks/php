@@ -14,4 +14,4 @@
   image = "gcr.io/paketo-buildpacks/php-dist:0.0.196"
 
 [[dependencies]]
-  image = "gcr.io/paketo-buildpacks/php-web:0.0.125"
+  image = "gcr.io/paketo-buildpacks/php-web:0.0.126"
