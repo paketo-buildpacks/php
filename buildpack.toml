@@ -27,7 +27,7 @@ api = "0.2"
 
   [[order.group]]
     id = "paketo-buildpacks/php-composer"
-    version = "0.0.119"
+    version = "0.0.120"
     optional = true
 
   [[order.group]]
