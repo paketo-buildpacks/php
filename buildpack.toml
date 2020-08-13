@@ -3,7 +3,7 @@ api = "0.2"
 [buildpack]
   homepage = "https://github.com/paketo-buildpacks/php"
   id = "paketo-buildpacks/php"
-  name = "PHP Buildpack"
+  name = "Paketo PHP Buildpack"
   version = "{{.Version}}"
 
 [metadata]
