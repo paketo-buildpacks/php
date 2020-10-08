@@ -9,7 +9,7 @@ well. These buildpacks should interact with each other via meaningful `build`
 and `launch` requirements. This builds a clean separation between the concerns
 for building an application and those concerns for running it. This simplified
 structure would include the following buildpacks in addition to the existing
-`httpd` and `nginx` buildpacks:
+Apache HTTPD Server and Nginx Server buildpacks:
 
 * **php-dist**:
   Installs the [`php`](https://www.php.net) interpreter, making it available on the `$PATH`
@@ -44,9 +44,9 @@ structure would include the following buildpacks in addition to the existing
   * provides: none
   * requires: `php`
 
-* **php-redis-session-handler**:
-  Configures the given redis service instance as a PHP session handler. Redis
-  settings are to be provided through a suitable
+* **php-memcached-session-handler**:
+  Configures the given memcached service instance as a PHP session handler.
+  Memcached settings are to be provided through a suitable
   [binding](https://paketo.io/docs/buildpacks/configuration/#bindings). The
   session handler is responsible for storing data from PHP sessions. By
   default, PHP uses files but they have severe scalability/performance
@@ -55,59 +55,116 @@ structure would include the following buildpacks in addition to the existing
   * provides: none
   * requires: `php`
 
-* **php-memached-session-handler**:
-  Configures the given memached service instance as a PHP session handler.
-  Memached settings are to be provided through a suitable
+* **php-redis-session-handler**:
+  Configures the given redis service instance as a PHP session handler.  Redis
+  settings are to be provided through a suitable
   [binding](https://paketo.io/docs/buildpacks/configuration/#bindings).
 
   * provides: none
   * requires: `php`
 
 
-This would result in the following order groupings in the php language family meta-buildpack:
+This would result in the following order groupings in the PHP language family meta-buildpack:
 
 ```toml
-[[order]] # Source
+[[order]] # HTTPD web server
 
   [[order.group]]
-    id = "paketo-buildpacks/"
+    id = "paketo-buildpacks/php-dist"
     version = ""
 
   [[order.group]]
-    id = "paketo-buildpacks/"
-    version = ""
-    optional = true
-
-  [[order.group]]
-    id = "paketo-buildpacks/"
-    version = ""
-
-  [[order.group]]
-    id = "paketo-buildpacks/"
+    id = "paketo-buildpacks/composer"
     version = ""
     optional = true
 
   [[order.group]]
-    id = "paketo-buildpacks/"
+    id = "paketo-buildpacks/composer-install"
     version = ""
     optional = true
 
   [[order.group]]
-    id = "paketo-buildpacks/"
+    id = "paketo-buildpacks/php-httpd"
     version = ""
 
   [[order.group]]
-    id = "paketo-buildpacks/"
+    id = "paketo-buildpacks/php-memcached-session-handler"
+    version = ""
+    optional = true
+
+  [[order.group]]
+    id = "paketo-buildpacks/php-redis-session-handler"
+    version = ""
+    optional = true
+
+
+[[order]] # Nginx web server
+
+  [[order.group]]
+    id = "paketo-buildpacks/php-dist"
     version = ""
 
+  [[order.group]]
+    id = "paketo-buildpacks/composer"
+    version = ""
+    optional = true
+
+  [[order.group]]
+    id = "paketo-buildpacks/composer-install"
+    version = ""
+    optional = true
+
+  [[order.group]]
+    id = "paketo-buildpacks/php-httpd"
+    version = ""
+
+  [[order.group]]
+    id = "paketo-buildpacks/php-memcached-session-handler"
+    version = ""
+    optional = true
+
+  [[order.group]]
+    id = "paketo-buildpacks/php-redis-session-handler"
+    version = ""
+    optional = true
+
+[[order]] # Built-in web server
+
+  [[order.group]]
+    id = "paketo-buildpacks/php-dist"
+    version = ""
+
+  [[order.group]]
+    id = "paketo-buildpacks/composer"
+    version = ""
+    optional = true
+
+  [[order.group]]
+    id = "paketo-buildpacks/composer-install"
+    version = ""
+    optional = true
+
+  [[order.group]]
+    id = "paketo-buildpacks/php-web-server"
+    version = ""
+
+  [[order.group]]
+    id = "paketo-buildpacks/php-memcached-session-handler"
+    version = ""
+    optional = true
+
+  [[order.group]]
+    id = "paketo-buildpacks/php-redis-session-handler"
+    version = ""
+    optional = true
 ```
 
 ## Notes
 
 Per the [Web Server Buidpack Subteam
 RFC](https://github.com/paketo-buildpacks/rfcs/blob/master/accepted/0006-web-servers.md),
-the `httpd` and `nginx` buildpacks are no more considered to be part of the php
-family of buildpacks.
+the Apache HTTPD Server and Nginx Server buildpacks are no more considered to
+be part of the PHP family of buildpacks.
 
 
 ## Unresolved Questions and Bikeshedding
