@@ -9,7 +9,7 @@ well. These buildpacks should interact with each other via meaningful `build`
 and `launch` requirements. This builds a clean separation between the concerns
 for building an application and those concerns for running it. This simplified
 structure would include the following buildpacks in addition to the existing
-Apache HTTPD Server and Nginx Server buildpacks:
+Apache HTTPD Server and Nginx Server buildpacks[<sup>1</sup>](#note-1):
 
 * **php-dist**:
   Installs the [`php`](https://www.php.net) interpreter, making it available on the `$PATH`
@@ -45,19 +45,17 @@ Apache HTTPD Server and Nginx Server buildpacks:
   * requires: `php`
 
 * **php-memcached-session-handler**:
-  Configures the given memcached service instance as a PHP session handler.
-  Memcached settings are to be provided through a suitable
-  [binding](https://paketo.io/docs/buildpacks/configuration/#bindings). The
-  session handler is responsible for storing data from PHP sessions. By
-  default, PHP uses files but they have severe scalability/performance
-  limitations.
-
+  Configures the given memcached service instance as a PHP session
+  handler[<sup>2</sup>](#note-2). Memcached settings are to be provided through
+  a suitable
+  [binding](https://paketo.io/docs/buildpacks/configuration/#bindings).
   * provides: none
   * requires: `php`
 
 * **php-redis-session-handler**:
-  Configures the given redis service instance as a PHP session handler.  Redis
-  settings are to be provided through a suitable
+  Configures the given redis service instance as a PHP session
+  handler[<sup>2</sup>](#note-2). Redis settings are to be provided through a
+  suitable
   [binding](https://paketo.io/docs/buildpacks/configuration/#bindings).
 
   * provides: none
@@ -159,14 +157,18 @@ This would result in the following order groupings in the PHP language family me
     optional = true
 ```
 
+## Unresolved Questions and Bikeshedding
+
+{{REMOVE THIS SECTION BEFORE RATIFICATION!}}
+
 ## Notes
 
-Per the [Web Server Buidpack Subteam
+<a name="note-1">1</a>. Per the [Web Server Buidpack Subteam
 RFC](https://github.com/paketo-buildpacks/rfcs/blob/master/accepted/0006-web-servers.md),
 the Apache HTTPD Server and Nginx Server buildpacks are no more considered to
 be part of the PHP family of buildpacks.
 
+<a name="note-2">2</a>. The session handler is responsible for storing data
+from PHP sessions. By default, PHP uses files but they have severe
+scalability/performance limitations.
 
-## Unresolved Questions and Bikeshedding
-
-{{REMOVE THIS SECTION BEFORE RATIFICATION!}}
