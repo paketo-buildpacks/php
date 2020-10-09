@@ -16,8 +16,9 @@ Apache HTTPD Server and Nginx Server buildpacks[<sup>1</sup>](#note-1):
   * provides: `php`
   * requires: none
 
-  This distribution must include popular modules like ldap, memcached, mongodb,
-  mysqli, openssl, phpiredis, zlib etc.
+  This distribution must include popular modules like memcached, mongodb,
+  mysqli, openssl, phpiredis, zlib etc. This buildpack also sets env vars for
+  downstream consumers to use.
 
 * **composer**:
   Installs [`composer`](https://getcomposer.org), a dependency manager for PHP and makes it available on the `$PATH`
