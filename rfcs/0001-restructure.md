@@ -1,4 +1,4 @@
-# Restructuring php buildpacks
+# Restructuring PHP Buildpacks
 
 ## Proposal
 
@@ -12,37 +12,50 @@ structure would include the following buildpacks in addition to the existing
 Apache HTTPD Server and Nginx Server buildpacks[<sup>1</sup>](#note-1):
 
 * **php-dist**:
-  Installs the [`php`](https://www.php.net) interpreter, making it available on the `$PATH`
+  Installs the [`php`](https://www.php.net) distribution, making it available on the `$PATH`
   * provides: `php`
   * requires: none
 
+  This distribution must include popular modules like ldap, memcached, mongodb,
+  mysqli, openssl, phpiredis, zlib etc.
+
 * **composer**:
-  Installs the [`composer`](https://getcomposer.org), a dependency manager for PHP and makes it available on the `$PATH`
+  Installs [`composer`](https://getcomposer.org), a dependency manager for PHP and makes it available on the `$PATH`
   * provides: `composer`
   * requires: none
 
 * **composer-install**:
   Resolves project dependencies, and installs them using `composer`.
   * provides: none
-  * requires: `php`, `composer`
+  * requires: `php`, `composer` at `build`
 
-* **php-web-server**:
-  Sets a launch time start command to start PHP's [built-in web
-  server](https://www.php.net/manual/en/features.commandline.webserver.php).
+* **php-builtin-server**:
+  Set up PHP's [built-in web
+  server](https://www.php.net/manual/en/features.commandline.webserver.php) to
+  serve PHP applications.
   * provides: none
-  * requires: `php`
+  * requires: `php` at `launch`
+
+  This buildpack generates `php.ini`, sets up env variables and a start command
+  to start the built-in web server.
 
 * **php-httpd**:
-  Generates a suitable `httpd.conf` to use httpd as the web server to serve PHP
-  application, and sets a launch time start command to start httpd.
+  Sets up HTTPD as the web server to serve PHP applications.
   * provides: none
-  * requires: `php`
+  * requires: `php`, `httpd`, at `launch`
+
+  This buildpack generates `php.ini`, `php-fpm.conf` and `httpd.conf`; sets up
+  env variables and a start command to run PHP FPM[<sup>2</sup>](#note-2) and
+  HTTPD Server.
 
 * **php-nginx**:
-  Generates a suitable `nginx.conf` to use nginx as the web server to serve PHP
-  application, and sets a launch time start command to start nginx.
+  Sets up Nginx as the web server to serve PHP applications.
   * provides: none
-  * requires: `php`
+  * requires: `php`, `nginx` at `launch`
+
+  This buildpack generates `php.ini`, `php-fpm.conf` and `nginx.conf`; sets up
+  env variables and a start command to run PHP FPM[<sup>2</sup>](#note-2) and
+  Nginx Server.
 
 * **php-memcached-session-handler**:
   Configures the given memcached service instance as a PHP session
@@ -50,16 +63,16 @@ Apache HTTPD Server and Nginx Server buildpacks[<sup>1</sup>](#note-1):
   a suitable
   [binding](https://paketo.io/docs/buildpacks/configuration/#bindings).
   * provides: none
-  * requires: `php`
+  * requires: php at `launch`
 
 * **php-redis-session-handler**:
   Configures the given redis service instance as a PHP session
-  handler[<sup>2</sup>](#note-2). Redis settings are to be provided through a
+  handler[<sup>3</sup>](#note-3). Redis settings are to be provided through a
   suitable
   [binding](https://paketo.io/docs/buildpacks/configuration/#bindings).
 
   * provides: none
-  * requires: `php`
+  * requires: php at `launch`
 
 
 This would result in the following order groupings in the PHP language family meta-buildpack:
@@ -143,7 +156,7 @@ This would result in the following order groupings in the PHP language family me
     optional = true
 
   [[order.group]]
-    id = "paketo-buildpacks/php-web-server"
+    id = "paketo-buildpacks/php-builtin-server"
     version = ""
 
   [[order.group]]
@@ -168,7 +181,11 @@ RFC](https://github.com/paketo-buildpacks/rfcs/blob/master/accepted/0006-web-ser
 the Apache HTTPD Server and Nginx Server buildpacks are no more considered to
 be part of the PHP family of buildpacks.
 
-<a name="note-2">2</a>. The session handler is responsible for storing data
+<a name="note-2">2</a>. There are two primary ways for adding support for PHP
+to a web server – as a native web server module, or as a CGI executable.
+PHP-FPM (FastCGI Process Manager) is a FastCGI implementation for PHP, bundled
+with the official PHP distribution since version 5.3.3
+
+<a name="note-3">3</a>. The session handler is responsible for storing data
 from PHP sessions. By default, PHP uses files but they have severe
 scalability/performance limitations.
-
