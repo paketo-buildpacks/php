@@ -95,6 +95,10 @@ This would result in the following order groupings in the PHP language family me
     optional = true
 
   [[order.group]]
+    id = "paketo-buildpacks/httpd"
+    version = ""
+
+  [[order.group]]
     id = "paketo-buildpacks/php-httpd"
     version = ""
 
@@ -126,7 +130,11 @@ This would result in the following order groupings in the PHP language family me
     optional = true
 
   [[order.group]]
-    id = "paketo-buildpacks/php-httpd"
+    id = "paketo-buildpacks/nginx"
+    version = ""
+
+  [[order.group]]
+    id = "paketo-buildpacks/php-nginx"
     version = ""
 
   [[order.group]]
