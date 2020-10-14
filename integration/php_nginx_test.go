@@ -53,7 +53,7 @@ func testPhpNginx(t *testing.T, context spec.G, it spec.S) {
 			var logs fmt.Stringer
 			image, logs, err = pack.WithNoColor().Build.
 				WithBuildpacks(phpBuildpack).
-				WithNoPull().
+				WithPullPolicy("never").
 				Execute(name, filepath.Join("testdata", "offline_composer_nginx"))
 			Expect(err).NotTo(HaveOccurred(), logs.String())
 
