@@ -18,18 +18,27 @@ various kinds of images related to PHP.
    `launch` requirements. This builds a clean separation between the concerns
    of building and running an application image.
 
+In the current state of the world, we have:
+
+- a [php-dist](github.com/paketo-buildpacks/php-dist) buildpack that provides
+  php.
+- a [php-composer](github.com/paketo-buildpacks/php-composer) that provides
+  composer and installs dependencies.
+- a [php-web](github.com/paketo-buildpacks/php-web) that takes care of
+  everything related to serving php on a web server.
+
 ## Buildpacks
 
-The PHP family of buildpacks serves the following functions:
+The PHP family of buildpacks aims to serve the following functions:
 * Build an image to run HTTPD web server with php
 * Build an image to run Nginx web server with php
 * Build an image to run Built-in php web server
-* Build an image to run FPM process manager using non-default process type `php-fpm`
+* Build an image to run FPM[<sup>1</sup>](#note-1) process manager
 * Optionally use composer as application level package manager
-* Optionally use memcached/redis as session handler
+* Optionally use memcached/redis as session handler[<sup>3</sup>](#note-3)
 
 The new structure would include the following buildpacks in addition to the existing
-Apache HTTPD Server and Nginx Server buildpacks[<sup>1</sup>](#note-1):
+Apache HTTPD Server and Nginx Server buildpacks[<sup>2</sup>](#note-2):
 
 * **php-dist**:
   Installs the [`php`](https://www.php.net) distribution, making it available on the `$PATH`
@@ -55,7 +64,7 @@ Apache HTTPD Server and Nginx Server buildpacks[<sup>1</sup>](#note-1):
 
 * **php-fpm**:
   Configures `php-fpm.conf` (config file in `php.ini` syntax), and sets a start
-  command (type `php-fpm`) to start FPM[<sup>2</sup>](#note-2).
+  command (type `php-fpm`) to start FPM[<sup>1</sup>](#note-1).
   * provides: `php-fpm`
   * requires: `php` during launch
 
@@ -95,7 +104,7 @@ Apache HTTPD Server and Nginx Server buildpacks[<sup>1</sup>](#note-1):
 
 * **php-memcached-session-handler**:
   Configures the given memcached service instance as a PHP session
-  handler[<sup>2</sup>](#note-2). Memcached settings are to be provided through
+  handler[<sup>3</sup>](#note-3). Memcached settings are to be provided through
   a suitable
   [binding](https://paketo.io/docs/buildpacks/configuration/#bindings).
   * provides: none
@@ -246,15 +255,15 @@ This would result in the following order groupings in the PHP language family me
 
 ## Notes
 
-<a name="note-1">1</a>. Per the [Web Server Buidpack Subteam
-RFC](https://github.com/paketo-buildpacks/rfcs/blob/master/accepted/0006-web-servers.md),
-the Apache HTTPD Server and Nginx Server buildpacks are no more considered to
-be part of the PHP family of buildpacks.
-
-<a name="note-2">2</a>. There are a few ways for adding support for PHP to a
+<a name="note-1">1</a>. There are a few ways for adding support for PHP to a
 web server – as a native web server module, using CGI, using FastCGI. FPM
 (FastCGI Process Manager) is a FastCGI implementation for PHP, bundled with the
 official PHP distribution since version 5.3.3
+
+<a name="note-2">2</a>. Per the [Web Server Buidpack Subteam
+RFC](https://github.com/paketo-buildpacks/rfcs/blob/master/accepted/0006-web-servers.md),
+the Apache HTTPD Server and Nginx Server buildpacks are no more considered to
+be part of the PHP family of buildpacks.
 
 <a name="note-3">3</a>. The session handler is responsible for storing data
 from PHP sessions. By default, PHP uses files but they have severe scalability
