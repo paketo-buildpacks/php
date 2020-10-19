@@ -16,7 +16,17 @@ various kinds of images related to PHP.
    from the buildpack unilaterally marking its layers as `build` or `launch`.
    Buildpacks should interact with each other via meaningful `build` and
    `launch` requirements. This builds a clean separation between the concerns
-   of building and running an application.
+   of building and running an application image.
+
+## Buildpacks
+
+The PHP family of buildpacks serves the following functions:
+* Build an image to run HTTPD web server with php
+* Build an image to run Nginx web server with php
+* Build an image to run Built-in php web server
+* Build an image to run FPM process manager using non-default process type `php-fpm`
+* Optionally use composer as application level package manager
+* Optionally use memcached/redis as session handler
 
 The new structure would include the following buildpacks in addition to the existing
 Apache HTTPD Server and Nginx Server buildpacks[<sup>1</sup>](#note-1):
@@ -30,7 +40,7 @@ Apache HTTPD Server and Nginx Server buildpacks[<sup>1</sup>](#note-1):
   mysqli, openssl, phpiredis, zlib etc; and a suitable `php.ini`. Downstream
   buildpacks are expected to obtain info (like extension dir) through the
   [`php-config`](https://www.php.net/manual/en/install.pecl.php-config.php)
-  executable.
+  executable whenever possible.
 
 * **composer**:
   Installs [`composer`](https://getcomposer.org), a dependency manager for PHP
@@ -43,19 +53,17 @@ Apache HTTPD Server and Nginx Server buildpacks[<sup>1</sup>](#note-1):
   * provides: none
   * requires: `php`, `composer` at `build`
 
-* **php-fpm**: (??)
+* **php-fpm**:
   Configures `php-fpm.conf` (config file in `php.ini` syntax), and sets a start
-  command.
-  FPM[<sup>2</sup>](#note-2).
+  command (type `php-fpm`) to start FPM[<sup>2</sup>](#note-2).
   * provides: `php-fpm`
   * requires: `php` during launch
 
-  Separation of php-fpm into a separate buildpack lets users run FPM in one
+  Separation of FPM into a separate buildpack lets users run FPM in one
   container and web server in another container.
-  The generated `php-fpm.conf` must accept requests on a unix socket, must
-  "include" custom php-fpm configs specified by the user (e.g. in buildpack.yml
-  or specific location in the app) and write the generated config file to a
-  well known location (like setting an env var or writing to <workingDir>).
+  The generated `php-fpm.conf` must accept requests on a tcp/ip socket by
+  default, must "include" custom fpm configs specified by the user (e.g. in
+  buildpack.yml or specific location in the app).
 
 * **php-builtin-server**:
   Set up PHP's [built-in web
@@ -64,26 +72,26 @@ Apache HTTPD Server and Nginx Server buildpacks[<sup>1</sup>](#note-1):
   * provides: none
   * requires: `php` at `launch`
 
-  This buildpack generates `php.ini`, sets up env variables and a start command
-  to start the built-in web server.
+  This buildpack sets a start command (type `web`) to start the built-in web
+  server. This is the default web server.
 
 * **php-httpd**:
   Sets up HTTPD as the web server to serve PHP applications.
   * provides: none
   * requires: `php`, `php-fpm`, `httpd`, at `launch`
 
-  This buildpack generates `httpd.conf` and sets up a start command to run PHP
-  FPM and HTTPD Server. Apps need to declare the intention to use httpd in
-  `buildpack.toml`:
+  This buildpack generates `httpd.conf` and sets up a start command (type
+  `web`) to run PHP FPM and HTTPD Server. Apps need to declare the intention to
+  use httpd in `buildpack.toml`:
 
 * **php-nginx**:
   Sets up Nginx as the web server to serve PHP applications.
   * provides: none
   * requires: `php`, `php-fpm`, `nginx` at `launch`
 
-  This buildpack generates `nginx.conf`, sets up a start command to run PHP FPM
-  and Nginx Server. Apps need to declare the intention to use nginx in
-  `buildpack.toml`:
+  This buildpack generates `nginx.conf` and sets up a start command (type
+  `web`) to run PHP FPM and Nginx Server. Apps need to declare the intention to
+  use nginx in `buildpack.toml`:
 
 * **php-memcached-session-handler**:
   Configures the given memcached service instance as a PHP session
@@ -100,7 +108,6 @@ Apache HTTPD Server and Nginx Server buildpacks[<sup>1</sup>](#note-1):
   [binding](https://paketo.io/docs/buildpacks/configuration/#bindings).
   * provides: none
   * requires: php at `launch`
-
 
 This would result in the following order groupings in the PHP language family meta-buildpack:
 
@@ -182,7 +189,7 @@ This would result in the following order groupings in the PHP language family me
     version = ""
     optional = true
 
-[[order]] # Built-in web server
+[[order]] # Built-in web server (web) & FPM (php-fpm)
 
   [[order.group]]
     id = "paketo-buildpacks/php-dist"
@@ -199,6 +206,10 @@ This would result in the following order groupings in the PHP language family me
     optional = true
 
   [[order.group]]
+    id = "paketo-buildpacks/php-fpm"
+    version = ""
+
+  [[order.group]]
     id = "paketo-buildpacks/php-builtin-server"
     version = ""
 
@@ -213,17 +224,23 @@ This would result in the following order groupings in the PHP language family me
     optional = true
 ```
 
+## Environment Variables
+
+* `php-dist` buildpack must expose the location of the `php.ini` file through
+  an environment variable available at build and launch.
+* `php-fpm` buildpack must expose the location of the `php-fpm.conf` file through
+  an environment variable available at build and launch.
+* Session handler buildpacks must use `PHP_INI_SCAN_DIR` to set the search path
+  for additional .ini files it configures.
+
 ## Unresolved Questions and Bikeshedding
 
-* php-httpd/php-nginx overrides the start cmd set by php-fpm. Does the spec allow for a way for
-start command set by 2 buildpacks to run together? (Different process-types?)
+* php-httpd/php-nginx also sets a start command for fpm that is also set by
+  php-fpm. Does the spec allow an elegant way for start cmds set by 2
+  buildpacks to run together?
 
-* How do you have a group such that it produces an image who will simply run php-fpm? There's no
-way to differentiate that group from php-built-in group.
-
-* Is php-fpm worth the separation? (If not, we can document it as a possible alternate solution)
-
-* What's the best way to detect if the app should be run on builtin/httpd/nginx?
+* Is buildpack.yml the best way to detect if the app should be run on
+  builtin/httpd/nginx?
 
 {{REMOVE THIS SECTION BEFORE RATIFICATION!}}
 
@@ -235,7 +252,7 @@ the Apache HTTPD Server and Nginx Server buildpacks are no more considered to
 be part of the PHP family of buildpacks.
 
 <a name="note-2">2</a>. There are a few ways for adding support for PHP to a
-web server – as a native web server module, using CGI, using FastCGI. PHP-FPM
+web server – as a native web server module, using CGI, using FastCGI. FPM
 (FastCGI Process Manager) is a FastCGI implementation for PHP, bundled with the
 official PHP distribution since version 5.3.3
 
