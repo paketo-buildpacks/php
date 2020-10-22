@@ -4,10 +4,9 @@ api = "0.2"
   homepage = "https://github.com/paketo-buildpacks/php"
   id = "paketo-buildpacks/php"
   name = "Paketo PHP Buildpack"
-  version = "{{.Version}}"
 
 [metadata]
-  include_files = ["buildpack.toml"]
+  include-files = ["buildpack.toml"]
 
 [[order]]
 
