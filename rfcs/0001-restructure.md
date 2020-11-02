@@ -34,11 +34,13 @@ The PHP family of buildpacks aims to serve the following functions:
 * Build an image to run Nginx web server with php
 * Build an image to run Built-in php web server
 * Build an image to run FPM[<sup>1</sup>](#note-1) process manager
+* Build an image to run a PHP CLI script using Procfile.
 * Optionally use composer as application level package manager
 * Optionally use memcached/redis as session handler[<sup>3</sup>](#note-3)
 
-The new structure would include the following buildpacks in addition to the existing
-Apache HTTPD Server and Nginx Server buildpacks[<sup>2</sup>](#note-2):
+The new structure would include the following buildpacks in addition to the
+existing Procfile, Apache HTTPD Server and Nginx Server
+buildpacks[<sup>2</sup>](#note-2):
 
 * **php-dist**:
   Installs the [`php`](https://www.php.net) distribution, making it available on the `$PATH`
@@ -71,8 +73,8 @@ Apache HTTPD Server and Nginx Server buildpacks[<sup>2</sup>](#note-2):
   Separation of FPM into a separate buildpack lets users run FPM in one
   container and web server in another container.
   The generated `php-fpm.conf` must accept requests on a tcp/ip socket by
-  default, must "include" custom fpm configs specified by the user (e.g. in
-  buildpack.yml or specific location in the app).
+  default, must "include" custom fpm configs specified by the user (e.g. via
+  env variables or specific location in the app).
 
 * **php-builtin-server**:
   Set up PHP's [built-in web
@@ -90,8 +92,8 @@ Apache HTTPD Server and Nginx Server buildpacks[<sup>2</sup>](#note-2):
   * requires: `php`, `php-fpm`, `httpd`, at `launch`
 
   This buildpack generates `httpd.conf` and sets up a start command (type
-  `web`) to run PHP FPM and HTTPD Server. Apps need to declare the intention to
-  use httpd in `buildpack.toml`:
+  `web`) to run PHP FPM and HTTPD Server. Users need to declare the intention to
+  use httpd.
 
 * **php-nginx**:
   Sets up Nginx as the web server to serve PHP applications.
@@ -99,8 +101,8 @@ Apache HTTPD Server and Nginx Server buildpacks[<sup>2</sup>](#note-2):
   * requires: `php`, `php-fpm`, `nginx` at `launch`
 
   This buildpack generates `nginx.conf` and sets up a start command (type
-  `web`) to run PHP FPM and Nginx Server. Apps need to declare the intention to
-  use nginx in `buildpack.toml`:
+  `web`) to run PHP FPM and Nginx Server. Users need to declare the intention to
+  use nginx.
 
 * **php-memcached-session-handler**:
   Configures the given memcached service instance as a PHP session
@@ -159,6 +161,10 @@ This would result in the following order groupings in the PHP language family me
     version = ""
     optional = true
 
+  [[order.group]]
+    id = "paketo-buildpacks/procfile"
+    version = ""
+    optional = true
 
 [[order]] # Nginx web server
 
@@ -198,7 +204,12 @@ This would result in the following order groupings in the PHP language family me
     version = ""
     optional = true
 
-[[order]] # Built-in web server (web) & FPM (php-fpm)
+  [[order.group]]
+    id = "paketo-buildpacks/procfile"
+    version = ""
+    optional = true
+
+[[order]] # Built-in web server (web), FPM (php-fpm) & Script (Procfile)
 
   [[order.group]]
     id = "paketo-buildpacks/php-dist"
@@ -231,6 +242,11 @@ This would result in the following order groupings in the PHP language family me
     id = "paketo-buildpacks/php-redis-session-handler"
     version = ""
     optional = true
+
+  [[order.group]]
+    id = "paketo-buildpacks/procfile"
+    version = ""
+    optional = true
 ```
 
 ## Environment Variables
@@ -244,14 +260,12 @@ This would result in the following order groupings in the PHP language family me
 
 ## Unresolved Questions and Bikeshedding
 
-* php-httpd/php-nginx also sets a start command for fpm that is also set by
+* ~~php-httpd/php-nginx also sets a start command for fpm that is also set by
   php-fpm. Does the spec allow an elegant way for start cmds set by 2
-  buildpacks to run together?
+  buildpacks to run together?~~ No
 
-* Is buildpack.yml the best way to detect if the app should be run on
-  builtin/httpd/nginx?
-
-{{REMOVE THIS SECTION BEFORE RATIFICATION!}}
+* ~~Is buildpack.yml the best way to detect if the app should be run on
+  builtin/httpd/nginx?~~ Consensus is to use env variables.
 
 ## Notes
 
