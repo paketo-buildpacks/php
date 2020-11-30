@@ -18,3 +18,6 @@ The buildpack also provides optional support for the utilization of
 
 Usage examples can be found in the
 [`samples` repository under the `php` directory](https://github.com/paketo-buildpacks/samples/tree/main/php).
+
+#### The PHP buildpack is compatible with the following builder(s):
+- [Paketo Full Builder](https://github.com/paketo-buildpacks/full-builder)
