@@ -16,8 +16,8 @@ webserver](https://www.php.net/manual/en/features.commandline.webserver.php),
 The buildpack also provides optional support for the utilization of
 [Composer](https://getcomposer.org) as a package manager.
 
-The PHP buildpack is compatible with the following builder(s):
-- [Paketo Full Builder](https://github.com/paketo-buildpacks/full-builder)
-
 Usage examples can be found in the
 [`samples` repository under the `php` directory](https://github.com/paketo-buildpacks/samples/tree/main/php).
+
+#### The PHP buildpack is compatible with the following builder(s):
+- [Paketo Full Builder](https://github.com/paketo-buildpacks/full-builder)
