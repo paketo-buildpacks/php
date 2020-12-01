@@ -12,13 +12,13 @@ api = "0.2"
 
   [[order.group]]
     id = "paketo-buildpacks/httpd"
-    version = "0.0.165"
     optional = true
+    version = "0.0.166"
 
   [[order.group]]
     id = "paketo-buildpacks/nginx"
-    version = "0.0.194"
     optional = true
+    version = "0.0.194"
 
   [[order.group]]
     id = "paketo-buildpacks/php-dist"
@@ -26,8 +26,8 @@ api = "0.2"
 
   [[order.group]]
     id = "paketo-buildpacks/php-composer"
-    version = "0.1.0"
     optional = true
+    version = "0.1.0"
 
   [[order.group]]
     id = "paketo-buildpacks/php-web"

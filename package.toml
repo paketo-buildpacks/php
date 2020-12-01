@@ -1,17 +1,18 @@
+
 [buildpack]
   uri = "build/buildpack.tgz"
 
 [[dependencies]]
-  image = "gcr.io/paketo-buildpacks/httpd:0.0.165"
+  uri = "docker://gcr.io/paketo-buildpacks/httpd:0.0.166"
 
 [[dependencies]]
-  image = "gcr.io/paketo-buildpacks/nginx:0.0.194"
+  uri = "docker://gcr.io/paketo-buildpacks/nginx:0.0.194"
 
 [[dependencies]]
-  image = "gcr.io/paketo-buildpacks/php-composer:0.1.0"
+  uri = "docker://gcr.io/paketo-buildpacks/php-composer:0.1.0"
 
 [[dependencies]]
-  image = "gcr.io/paketo-buildpacks/php-dist:0.0.209"
+  uri = "docker://gcr.io/paketo-buildpacks/php-dist:0.0.209"
 
 [[dependencies]]
-  image = "gcr.io/paketo-buildpacks/php-web:0.0.134"
+  uri = "docker://gcr.io/paketo-buildpacks/php-web:0.0.134"
