@@ -88,7 +88,7 @@ func testPhpHttpd(t *testing.T, context spec.G, it spec.S) {
 
 		context("when there is a Procfile", func() {
 			it.Before(func() {
-				Expect(ioutil.WriteFile(filepath.Join(source, "Procfile"), []byte("web: procmgr /layers/paketo-buildpacks_php-web/php-web/procs.yml"), 0644)).To(Succeed())
+				Expect(ioutil.WriteFile(filepath.Join(source, "Procfile"), []byte("web: procmgr /layers/paketo-buildpacks_php-web/php-web/procs.yml && sleep infinity"), 0644)).To(Succeed())
 			})
 
 			it("creates a working OCI image and uses the Procfile buildpack", func() {
@@ -122,6 +122,7 @@ func testPhpHttpd(t *testing.T, context spec.G, it spec.S) {
 				Expect(logs).To(ContainLines(ContainSubstring("PHP Web Buildpack")))
 				Expect(logs).To(ContainLines(ContainSubstring("PHP Composer Buildpack")))
 				Expect(logs).To(ContainLines(ContainSubstring("Procfile Buildpack")))
+				Expect(logs).To(ContainLines(ContainSubstring("web: procmgr /layers/paketo-buildpacks_php-web/php-web/procs.yml && sleep infinity")))
 			})
 		})
 	})
