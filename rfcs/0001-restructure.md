@@ -255,8 +255,9 @@ This would result in the following order groupings in the PHP language family me
   an environment variable available at build and launch.
 * `php-fpm` buildpack must expose the location of the `php-fpm.conf` file through
   an environment variable available at build and launch.
-* Session handler buildpacks must use `PHP_INI_SCAN_DIR` to set the search path
-  for additional .ini files it configures.
+* Session handler buildpacks must append to `PHP_INI_SCAN_DIR` to modify the
+  search path so PHP will locate any .ini configuration files required by the
+  handler to operate.
 
 ## Unresolved Questions and Bikeshedding
 
