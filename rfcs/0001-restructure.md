@@ -62,13 +62,13 @@ buildpacks[<sup>2</sup>](#note-2):
 * **composer-install**:
   Resolves project dependencies, and installs them using `composer`.
   * provides: none
-  * requires: `php`, `composer` at `build`
+  * requires: `php`, `composer` at build
 
 * **php-fpm**:
   Configures `php-fpm.conf` (config file in `php.ini` syntax), and sets a start
   command (type `php-fpm`) to start FPM[<sup>1</sup>](#note-1).
   * provides: `php-fpm`
-  * requires: `php` during launch
+  * requires: `php` at build and launch
 
   Separation of FPM into a separate buildpack lets users run FPM in one
   container and web server in another container.
@@ -81,7 +81,7 @@ buildpacks[<sup>2</sup>](#note-2):
   server](https://www.php.net/manual/en/features.commandline.webserver.php) to
   serve PHP applications.
   * provides: none
-  * requires: `php` at `launch`
+  * requires: `php` at launch
 
   This buildpack sets a start command (type `web`) to start the built-in web
   server. This is the default web server.
@@ -89,7 +89,7 @@ buildpacks[<sup>2</sup>](#note-2):
 * **php-httpd**:
   Sets up HTTPD as the web server to serve PHP applications.
   * provides: none
-  * requires: `php`, `php-fpm`, `httpd`, at `launch`
+  * requires: `php` at build; `php`, `php-fpm`, `httpd` at launch
 
   This buildpack generates `httpd.conf` and sets up a start command (type
   `web`) to run PHP FPM and HTTPD Server. Users need to declare the intention to
@@ -98,7 +98,7 @@ buildpacks[<sup>2</sup>](#note-2):
 * **php-nginx**:
   Sets up Nginx as the web server to serve PHP applications.
   * provides: none
-  * requires: `php`, `php-fpm`, `nginx` at `launch`
+  * requires: `php` at build; `php`, `php-fpm`, `nginx` at launch
 
   This buildpack generates `nginx.conf` and sets up a start command (type
   `web`) to run PHP FPM and Nginx Server. Users need to declare the intention to
@@ -110,7 +110,7 @@ buildpacks[<sup>2</sup>](#note-2):
   a suitable
   [binding](https://paketo.io/docs/buildpacks/configuration/#bindings).
   * provides: none
-  * requires: php at `launch`
+  * requires: `php` at launch
 
 * **php-redis-session-handler**:
   Configures the given redis service instance as a PHP session
@@ -118,7 +118,7 @@ buildpacks[<sup>2</sup>](#note-2):
   suitable
   [binding](https://paketo.io/docs/buildpacks/configuration/#bindings).
   * provides: none
-  * requires: php at `launch`
+  * requires: `php` at launch
 
 This would result in the following order groupings in the PHP language family meta-buildpack:
 
@@ -251,8 +251,6 @@ This would result in the following order groupings in the PHP language family me
 
 ## Environment Variables
 
-* `php-dist` buildpack must expose the location of the `php.ini` file through
-  an environment variable available at build and launch.
 * `php-fpm` buildpack must expose the location of the `php-fpm.conf` file through
   an environment variable available at build and launch.
 * Session handler buildpacks must append to `PHP_INI_SCAN_DIR` to modify the
