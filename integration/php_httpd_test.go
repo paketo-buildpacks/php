@@ -29,7 +29,7 @@ func testPhpHttpd(t *testing.T, context spec.G, it spec.S) {
 		docker = occam.NewDocker()
 	})
 
-	context("when building a php app using php-web, php-composer, and httpd", func() {
+	context("building a php app using php-web, php-composer, and httpd", func() {
 		var (
 			image     occam.Image
 			container occam.Container
@@ -84,46 +84,94 @@ func testPhpHttpd(t *testing.T, context spec.G, it spec.S) {
 			Expect(logs).To(ContainLines(ContainSubstring("PHP Web Buildpack")))
 			Expect(logs).To(ContainLines(ContainSubstring("PHP Composer Buildpack")))
 			Expect(logs).NotTo(ContainLines(ContainSubstring("Procfile Buildpack")))
+			Expect(logs).NotTo(ContainLines(ContainSubstring("Environment Variables Buildpack")))
 		})
 
-		context("when there is a Procfile", func() {
-			it.Before(func() {
-				Expect(ioutil.WriteFile(filepath.Join(source, "Procfile"), []byte("web: procmgr /layers/paketo-buildpacks_php-web/php-web/procs.yml && sleep infinity"), 0644)).To(Succeed())
+		context("using optional utility buildpacks", func() {
+
+			context("there is a Procfile", func() {
+				it.Before(func() {
+					Expect(ioutil.WriteFile(filepath.Join(source, "Procfile"), []byte("web: procmgr /layers/paketo-buildpacks_php-web/php-web/procs.yml && sleep infinity"), 0644)).To(Succeed())
+				})
+
+				it("creates a working OCI image and uses the Procfile buildpack", func() {
+					var err error
+					var logs fmt.Stringer
+					image, logs, err = pack.WithNoColor().Build.
+						WithBuildpacks(phpBuildpack).
+						WithPullPolicy("never").
+						Execute(name, source)
+					Expect(err).NotTo(HaveOccurred(), logs.String())
+
+					container, err = docker.Container.Run.
+						WithEnv(map[string]string{"PORT": "8080"}).
+						WithPublish("8080").
+						WithPublishAll().
+						Execute(image.ID)
+					Expect(err).NotTo(HaveOccurred())
+
+					Eventually(container).Should(BeAvailableAndReady(), ContainerLogs(container.ID))
+
+					response, err := http.Get(fmt.Sprintf("http://localhost:%s", container.HostPort("8080")))
+					Expect(err).NotTo(HaveOccurred())
+					defer response.Body.Close()
+
+					content, err := ioutil.ReadAll(response.Body)
+					Expect(err).NotTo(HaveOccurred())
+					Expect(string(content)).To(MatchRegexp("This is an HTTPD app."))
+
+					Expect(logs).To(ContainLines(ContainSubstring("PHP Buildpack")))
+					Expect(logs).To(ContainLines(ContainSubstring("Apache HTTP Server Buildpack")))
+					Expect(logs).To(ContainLines(ContainSubstring("PHP Web Buildpack")))
+					Expect(logs).To(ContainLines(ContainSubstring("PHP Composer Buildpack")))
+					Expect(logs).To(ContainLines(ContainSubstring("Procfile Buildpack")))
+					Expect(logs).To(ContainLines(ContainSubstring("web: procmgr /layers/paketo-buildpacks_php-web/php-web/procs.yml && sleep infinity")))
+				})
 			})
 
-			it("creates a working OCI image and uses the Procfile buildpack", func() {
-				var err error
-				var logs fmt.Stringer
-				image, logs, err = pack.WithNoColor().Build.
-					WithBuildpacks(phpBuildpack).
-					WithPullPolicy("never").
-					Execute(name, source)
-				Expect(err).NotTo(HaveOccurred(), logs.String())
+			context("environment variables are set at build time", func() {
 
-				container, err = docker.Container.Run.
-					WithEnv(map[string]string{"PORT": "8080"}).
-					WithPublish("8080").
-					WithPublishAll().
-					Execute(image.ID)
-				Expect(err).NotTo(HaveOccurred())
+				it("creates a working OCI image and uses the Environment Variables buildpack", func() {
+					var err error
+					var logs fmt.Stringer
+					image, logs, err = pack.WithNoColor().Build.
+						WithBuildpacks(phpBuildpack).
+						WithPullPolicy("never").
+						WithEnv(map[string]string{
+							"BPE_SOME_VARIABLE": "stew-peas",
+						}).
+						Execute(name, source)
+					Expect(err).NotTo(HaveOccurred(), logs.String())
 
-				Eventually(container).Should(BeAvailableAndReady(), ContainerLogs(container.ID))
+					container, err = docker.Container.Run.
+						WithEnv(map[string]string{"PORT": "8080"}).
+						WithPublish("8080").
+						WithPublishAll().
+						Execute(image.ID)
+					Expect(err).NotTo(HaveOccurred())
 
-				response, err := http.Get(fmt.Sprintf("http://localhost:%s", container.HostPort("8080")))
-				Expect(err).NotTo(HaveOccurred())
-				defer response.Body.Close()
+					Eventually(container).Should(BeAvailableAndReady(), ContainerLogs(container.ID))
 
-				content, err := ioutil.ReadAll(response.Body)
-				Expect(err).NotTo(HaveOccurred())
-				Expect(string(content)).To(MatchRegexp("This is an HTTPD app."))
+					response, err := http.Get(fmt.Sprintf("http://localhost:%s", container.HostPort("8080")))
+					Expect(err).NotTo(HaveOccurred())
+					defer response.Body.Close()
 
-				Expect(logs).To(ContainLines(ContainSubstring("PHP Buildpack")))
-				Expect(logs).To(ContainLines(ContainSubstring("Apache HTTP Server Buildpack")))
-				Expect(logs).To(ContainLines(ContainSubstring("PHP Web Buildpack")))
-				Expect(logs).To(ContainLines(ContainSubstring("PHP Composer Buildpack")))
-				Expect(logs).To(ContainLines(ContainSubstring("Procfile Buildpack")))
-				Expect(logs).To(ContainLines(ContainSubstring("web: procmgr /layers/paketo-buildpacks_php-web/php-web/procs.yml && sleep infinity")))
+					content, err := ioutil.ReadAll(response.Body)
+					Expect(err).NotTo(HaveOccurred())
+					Expect(string(content)).To(MatchRegexp("This is an HTTPD app."))
+
+					Expect(logs).To(ContainLines(ContainSubstring("PHP Buildpack")))
+					Expect(logs).To(ContainLines(ContainSubstring("Apache HTTP Server Buildpack")))
+					Expect(logs).To(ContainLines(ContainSubstring("PHP Web Buildpack")))
+					Expect(logs).To(ContainLines(ContainSubstring("PHP Composer Buildpack")))
+					Expect(logs).To(ContainLines(ContainSubstring("Environment Variables Buildpack")))
+
+					Expect(image.Buildpacks[4].Key).To(Equal("paketo-buildpacks/environment-variables"))
+					Expect(image.Buildpacks[4].Layers["environment-variables"].Metadata["variables"]).To(Equal(map[string]interface{}{"SOME_VARIABLE": "stew-peas"}))
+				})
 			})
+
 		})
+
 	})
 }
