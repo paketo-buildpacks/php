@@ -93,7 +93,8 @@ func testPhpHttpd(t *testing.T, context spec.G, it spec.S) {
 				Expect(ioutil.WriteFile(filepath.Join(source, "Procfile"), []byte("web: procmgr /layers/paketo-buildpacks_php-web/php-web/procs.yml && sleep infinity"), 0644)).To(Succeed())
 			})
 
-			it("creates a working OCI image and uses the Procfile,Environment Variables, and Image Labels buildpacks", func() {
+
+			it("creates a working OCI image and uses the Procfile, Environment Variables, and Image Labels buildpacks", func() {
 				var err error
 				var logs fmt.Stringer
 				image, logs, err = pack.WithNoColor().Build.
