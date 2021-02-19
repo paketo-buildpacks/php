@@ -47,4 +47,3 @@ api = "0.2"
     id = "paketo-buildpacks/image-labels"
     optional = true
     version = "3.0.0"
-
