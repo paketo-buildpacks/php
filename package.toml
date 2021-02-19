@@ -25,4 +25,3 @@
 
 [[dependencies]]
   uri = "docker://gcr.io/paketo-buildpacks/image-labels:3.0.0"
-
