@@ -19,5 +19,18 @@ The buildpack also provides optional support for the utilization of
 Usage examples can be found in the
 [`samples` repository under the `php` directory](https://github.com/paketo-buildpacks/samples/tree/main/php).
 
+This buildpack also includes the following utility buildpacks:
+- [Procfile CNB](https://github.com/paketo-buildpacks/procfile)
+- [Environment Variables CNB](https://github.com/paketo-buildpacks/environment-variables)
+- [Image Labels CNB](https://github.com/paketo-buildpacks/image-labels)
+- [CA Certificates CNB](https://github.com/paketo-buildpacks/ca-certificates)
+
 #### The PHP buildpack is compatible with the following builder(s):
+
 - [Paketo Full Builder](https://github.com/paketo-buildpacks/full-builder)
+
+#### Docs
+
+Check out the [PHP Paketo Buildpack
+docs](https://paketo.io/docs/buildpacks/language-family-buildpacks/php) for
+more information.
