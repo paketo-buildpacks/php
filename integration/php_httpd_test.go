@@ -81,7 +81,7 @@ func testPhpHttpd(t *testing.T, context spec.G, it spec.S) {
 			Expect(err).NotTo(HaveOccurred())
 			Expect(string(content)).To(MatchRegexp("This is an HTTPD app."))
 
-			Expect(logs).To(ContainLines(ContainSubstring("PHP Buildpack")))
+			Expect(logs).To(ContainLines(ContainSubstring("PHP Distribution Buildpack")))
 			Expect(logs).To(ContainLines(ContainSubstring("Apache HTTP Server Buildpack")))
 			Expect(logs).To(ContainLines(ContainSubstring("PHP Web Buildpack")))
 			Expect(logs).To(ContainLines(ContainSubstring("PHP Composer Buildpack")))
@@ -119,7 +119,7 @@ func testPhpHttpd(t *testing.T, context spec.G, it spec.S) {
 				Eventually(container).Should(Serve("This is an HTTPD app.").OnPort(8080))
 
 				Expect(logs).To(ContainLines(ContainSubstring("CA Certificates Buildpack")))
-				Expect(logs).To(ContainLines(ContainSubstring("PHP Buildpack")))
+				Expect(logs).To(ContainLines(ContainSubstring("PHP Distribution Buildpack")))
 				Expect(logs).To(ContainLines(ContainSubstring("Apache HTTP Server Buildpack")))
 				Expect(logs).To(ContainLines(ContainSubstring("PHP Web Buildpack")))
 				Expect(logs).To(ContainLines(ContainSubstring("PHP Composer Buildpack")))
@@ -177,7 +177,7 @@ func testPhpHttpd(t *testing.T, context spec.G, it spec.S) {
 
 				Expect(logs).To(ContainLines(ContainSubstring("CA Certificates Buildpack")))
 				Expect(logs).To(ContainLines(ContainSubstring("Apache HTTP Server Buildpack")))
-				Expect(logs).To(ContainLines(ContainSubstring("PHP Buildpack")))
+				Expect(logs).To(ContainLines(ContainSubstring("PHP Distribution Buildpack")))
 				Expect(logs).To(ContainLines(ContainSubstring("PHP Web Buildpack")))
 
 				container, err = docker.Container.Run.

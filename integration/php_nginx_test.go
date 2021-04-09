@@ -80,7 +80,7 @@ func testPhpNginx(t *testing.T, context spec.G, it spec.S) {
 			Expect(err).NotTo(HaveOccurred())
 			Expect(string(content)).To(MatchRegexp("This is an nginx app."))
 
-			Expect(logs).To(ContainLines(ContainSubstring("PHP Buildpack")))
+			Expect(logs).To(ContainLines(ContainSubstring("PHP Distribution Buildpack")))
 			Expect(logs).To(ContainLines(ContainSubstring("Nginx Server Buildpack")))
 			Expect(logs).To(ContainLines(ContainSubstring("PHP Web Buildpack")))
 			Expect(logs).To(ContainLines(ContainSubstring("PHP Composer Buildpack")))
@@ -117,7 +117,7 @@ func testPhpNginx(t *testing.T, context spec.G, it spec.S) {
 				Eventually(container).Should(BeAvailableAndReady(), ContainerLogs(container.ID))
 				Eventually(container).Should(Serve("This is an nginx app.").OnPort(8080))
 
-				Expect(logs).To(ContainLines(ContainSubstring("PHP Buildpack")))
+				Expect(logs).To(ContainLines(ContainSubstring("PHP Distribution Buildpack")))
 				Expect(logs).To(ContainLines(ContainSubstring("Nginx Server Buildpack")))
 				Expect(logs).To(ContainLines(ContainSubstring("PHP Web Buildpack")))
 				Expect(logs).To(ContainLines(ContainSubstring("PHP Composer Buildpack")))
