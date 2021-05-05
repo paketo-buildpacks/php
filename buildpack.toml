@@ -36,7 +36,7 @@ api = "0.4"
 
   [[order.group]]
     id = "paketo-buildpacks/php-web"
-    version = "0.1.0"
+    version = "0.1.1"
 
   [[order.group]]
     id = "paketo-buildpacks/procfile"
