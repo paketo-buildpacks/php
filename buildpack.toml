@@ -32,7 +32,7 @@ api = "0.4"
   [[order.group]]
     id = "paketo-buildpacks/php-composer"
     optional = true
-    version = "0.2.1"
+    version = "0.2.2"
 
   [[order.group]]
     id = "paketo-buildpacks/php-web"
