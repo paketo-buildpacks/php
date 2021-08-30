@@ -6,13 +6,13 @@
   uri = "docker://gcr.io/paketo-buildpacks/httpd:0.1.1"
 
 [[dependencies]]
-  uri = "docker://gcr.io/paketo-buildpacks/nginx:0.3.1"
+  uri = "docker://gcr.io/paketo-buildpacks/nginx:0.3.2"
 
 [[dependencies]]
   uri = "docker://gcr.io/paketo-buildpacks/php-composer:0.2.2"
 
 [[dependencies]]
-  uri = "docker://gcr.io/paketo-buildpacks/php-dist:0.3.2"
+  uri = "docker://gcr.io/paketo-buildpacks/php-dist:0.3.3"
 
 [[dependencies]]
   uri = "docker://gcr.io/paketo-buildpacks/php-web:0.1.2"
