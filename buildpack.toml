@@ -23,7 +23,7 @@ api = "0.4"
   [[order.group]]
     id = "paketo-buildpacks/nginx"
     optional = true
-    version = "0.3.2"
+    version = "0.3.3"
 
   [[order.group]]
     id = "paketo-buildpacks/php-dist"
