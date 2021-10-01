@@ -18,7 +18,7 @@
   uri = "docker://gcr.io/paketo-buildpacks/php-web:0.1.2"
 
 [[dependencies]]
-  uri = "docker://gcr.io/paketo-buildpacks/procfile:4.3.1"
+  uri = "docker://gcr.io/paketo-buildpacks/procfile:4.4.0"
 
 [[dependencies]]
   uri = "docker://gcr.io/paketo-buildpacks/environment-variables:3.2.1"
