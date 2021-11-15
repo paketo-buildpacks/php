@@ -3,7 +3,7 @@
   uri = "build/buildpack.tgz"
 
 [[dependencies]]
-  uri = "docker://gcr.io/paketo-buildpacks/httpd:0.1.3"
+  uri = "docker://gcr.io/paketo-buildpacks/httpd:0.2.0"
 
 [[dependencies]]
   uri = "docker://gcr.io/paketo-buildpacks/nginx:0.4.0"
