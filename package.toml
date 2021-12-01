@@ -9,7 +9,7 @@
   uri = "docker://gcr.io/paketo-buildpacks/nginx:0.5.2"
 
 [[dependencies]]
-  uri = "docker://gcr.io/paketo-buildpacks/php-composer:0.2.6"
+  uri = "docker://gcr.io/paketo-buildpacks/php-composer:0.2.7"
 
 [[dependencies]]
   uri = "docker://gcr.io/paketo-buildpacks/php-dist:0.4.1"
