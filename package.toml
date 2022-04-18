@@ -12,7 +12,7 @@
   uri = "docker://gcr.io/paketo-buildpacks/php-composer:0.3.0"
 
 [[dependencies]]
-  uri = "docker://gcr.io/paketo-buildpacks/php-dist:0.6.1"
+  uri = "docker://gcr.io/paketo-buildpacks/php-dist:0.7.0"
 
 [[dependencies]]
   uri = "docker://gcr.io/paketo-buildpacks/php-web:0.1.4"
