@@ -18,13 +18,13 @@
   uri = "docker://gcr.io/paketo-buildpacks/php-web:0.1.4"
 
 [[dependencies]]
-  uri = "docker://gcr.io/paketo-buildpacks/procfile:5.1.0"
+  uri = "docker://gcr.io/paketo-buildpacks/procfile:5.1.1"
 
 [[dependencies]]
-  uri = "docker://gcr.io/paketo-buildpacks/environment-variables:4.1.0"
+  uri = "docker://gcr.io/paketo-buildpacks/environment-variables:4.1.1"
 
 [[dependencies]]
-  uri = "docker://gcr.io/paketo-buildpacks/image-labels:4.1.0"
+  uri = "docker://gcr.io/paketo-buildpacks/image-labels:4.1.1"
 
 [[dependencies]]
   uri = "docker://gcr.io/paketo-buildpacks/ca-certificates:3.2.0"
