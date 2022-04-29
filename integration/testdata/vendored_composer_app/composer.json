@@ -1,0 +1,7 @@
+{
+    "name": "paketo-buildapcks/composer_app",
+    "type": "project",
+    "require": {
+        "monolog/monolog": "^1.24"
+    }
+}

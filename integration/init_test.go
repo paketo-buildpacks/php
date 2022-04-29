@@ -1,25 +1,24 @@
 package integration_test
 
 import (
-	"fmt"
-	"net/http"
 	"os/exec"
 	"path/filepath"
 	"testing"
 	"time"
 
-	"github.com/paketo-buildpacks/occam"
 	"github.com/sclevine/spec"
 	"github.com/sclevine/spec/report"
 
 	. "github.com/onsi/gomega"
-	"github.com/onsi/gomega/types"
+	"github.com/onsi/gomega/format"
 )
 
 var phpBuildpack string
 
 func TestIntegration(t *testing.T) {
 	Expect := NewWithT(t).Expect
+
+	format.MaxLength = 0
 
 	output, err := exec.Command("bash", "-c", "../scripts/package.sh --version 1.2.3").CombinedOutput()
 	Expect(err).NotTo(HaveOccurred(), string(output))
@@ -30,68 +29,11 @@ func TestIntegration(t *testing.T) {
 	SetDefaultEventuallyTimeout(10 * time.Second)
 
 	suite := spec.New("Integration", spec.Parallel(), spec.Report(report.Terminal{}))
-	suite("composer with nginx", testPhpNginx)
-	suite("composer with httpd", testPhpHttpd)
+	suite("Composer", testComposer)
+	suite("HTTPD", testPhpHttpd)
+	suite("Nginx", testPhpNginx)
+	suite("Builtin Server", testPhpBuiltinServer)
+	suite("Redis Session Handler", testRedisSessionHandler)
+	suite("Memcached Session Handler", testMemcachedSessionHandler)
 	suite.Run(t)
-}
-
-func ContainerLogs(id string) func() string {
-	docker := occam.NewDocker()
-
-	return func() string {
-		logs, _ := docker.Container.Logs.Execute(id)
-		return logs.String()
-	}
-}
-
-func BeAvailableAndReady() types.GomegaMatcher {
-	return &BeAvailableAndReadyMatcher{
-		Docker: occam.NewDocker(),
-	}
-}
-
-type BeAvailableAndReadyMatcher struct {
-	Docker occam.Docker
-}
-
-func (*BeAvailableAndReadyMatcher) Match(actual interface{}) (bool, error) {
-	container, ok := actual.(occam.Container)
-	if !ok {
-		return false, fmt.Errorf("BeAvailableMatcher expects an occam.Container, received %T", actual)
-	}
-
-	response, err := http.Get(fmt.Sprintf("http://localhost:%s", container.HostPort("8080")))
-	if err != nil {
-		return false, nil
-	}
-
-	if response.StatusCode != http.StatusOK {
-		return false, nil
-	}
-
-	defer response.Body.Close()
-
-	return true, nil
-}
-
-func (m *BeAvailableAndReadyMatcher) FailureMessage(actual interface{}) string {
-	container := actual.(occam.Container)
-	message := fmt.Sprintf("Expected\n\tdocker container id: %s\nto be available.", container.ID)
-
-	if logs, _ := m.Docker.Container.Logs.Execute(container.ID); logs != nil {
-		message = fmt.Sprintf("%s\n\nContainer logs:\n\n%s", message, logs)
-	}
-
-	return message
-}
-
-func (m *BeAvailableAndReadyMatcher) NegatedFailureMessage(actual interface{}) string {
-	container := actual.(occam.Container)
-	message := fmt.Sprintf("Expected\n\tdocker container id: %s\nnot to be available.", container.ID)
-
-	if logs, _ := m.Docker.Container.Logs.Execute(container.ID); logs != nil {
-		message = fmt.Sprintf("%s\n\nContainer logs:\n\n%s", message, logs)
-	}
-
-	return message
 }

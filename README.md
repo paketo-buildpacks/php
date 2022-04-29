@@ -4,8 +4,15 @@
 The PHP Paketo Buildpack provides a set of collaborating buildpacks that
 enable the building of a PHP-based application. These buildpacks include:
 - [PHP Dist CNB](https://github.com/paketo-buildpacks/php-dist)
-- [PHP Web CNB](https://github.com/paketo-buildpacks/php-web)
-- [PHP Composer CNB](https://github.com/paketo-buildpacks/php-composer)
+- [PHP HTTPD CNB](https://github.com/paketo-buildpacks/php-httpd)
+- [PHP Nginx CNB](https://github.com/paketo-buildpacks/php-nginx)
+- [PHP Built-in Server CNB](https://github.com/paketo-buildpacks/php-builtin-server)
+- [PHP FPM CNB](https://github.com/paketo-buildpacks/php-fpm)
+- [PHP Start CNB](https://github.com/paketo-buildpacks/php-start)
+- [PHP Redis Session Handler CNB](https://github.com/paketo-buildpacks/php-redis-session-handler)
+- [PHP Memcached Session Handler CNB](https://github.com/paketo-buildpacks/php-memcached-session-handler)
+- [Composer CNB](https://github.com/paketo-buildpacks/composer)
+- [Composer Install CNB](https://github.com/paketo-buildpacks/composer-install)
 - [Apache HTTPD CNB](https://github.com/paketo-buildpacks/httpd)
 - [NGINX CNB](https://github.com/paketo-buildpacks/nginx)
 
