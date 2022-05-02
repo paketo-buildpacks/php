@@ -1,7 +1,0 @@
-{
-    "name": "cloudfoundry/composer_app",
-    "type": "project",
-    "require": {
-        "monolog/monolog": "^1.24"
-    }
-}

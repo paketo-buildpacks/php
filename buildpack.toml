@@ -1,9 +1,13 @@
-api = "0.4"
+api = "0.7"
 
 [buildpack]
   homepage = "https://github.com/paketo-buildpacks/php"
   id = "paketo-buildpacks/php"
   name = "Paketo PHP Buildpack"
+
+  [[buildpack.licenses]]
+    type = "Apache-2.0"
+    uri = "https://github.com/paketo-buildpacks/php/blob/main/LICENSE"
 
 [metadata]
   include-files = ["buildpack.toml"]
@@ -16,27 +20,151 @@ api = "0.4"
     version = "3.2.0"
 
   [[order.group]]
-    id = "paketo-buildpacks/httpd"
+    id = "paketo-buildpacks/php-dist"
+    version = "1.0.0"
+
+  [[order.group]]
+    id = "paketo-buildpacks/composer"
     optional = true
+    version = "0.1.0"
+
+  [[order.group]]
+    id = "paketo-buildpacks/composer-install"
+    optional = true
+    version = "0.1.0"
+
+  [[order.group]]
+    id = "paketo-buildpacks/httpd"
     version = "0.4.1"
 
   [[order.group]]
-    id = "paketo-buildpacks/nginx"
+    id = "paketo-buildpacks/php-fpm"
+    version = "0.1.1"
+
+  [[order.group]]
+    id = "paketo-buildpacks/php-httpd"
+    version = "0.2.0"
+
+  [[order.group]]
+    id = "paketo-buildpacks/php-memcached-session-handler"
+    version = "0.1.0"
     optional = true
-    version = "0.7.0"
+
+  [[order.group]]
+    id = "paketo-buildpacks/php-redis-session-handler"
+    version = "0.1.0"
+    optional = true
+
+  [[order.group]]
+    id = "paketo-buildpacks/php-start"
+    version = "0.2.0"
+
+  [[order.group]]
+    id = "paketo-buildpacks/procfile"
+    optional = true
+    version = "5.1.1"
+
+  [[order.group]]
+    id = "paketo-buildpacks/environment-variables"
+    optional = true
+    version = "4.1.1"
+
+  [[order.group]]
+    id = "paketo-buildpacks/image-labels"
+    optional = true
+    version = "4.1.1"
+
+[[order]]
+
+  [[order.group]]
+    id = "paketo-buildpacks/ca-certificates"
+    optional = true
+    version = "3.2.0"
 
   [[order.group]]
     id = "paketo-buildpacks/php-dist"
-    version = "0.8.0"
+    version = "1.0.0"
 
   [[order.group]]
-    id = "paketo-buildpacks/php-composer"
+    id = "paketo-buildpacks/composer"
     optional = true
-    version = "0.3.1"
+    version = "0.1.0"
 
   [[order.group]]
-    id = "paketo-buildpacks/php-web"
-    version = "0.1.4"
+    id = "paketo-buildpacks/composer-install"
+    optional = true
+    version = "0.1.0"
+
+  [[order.group]]
+    id = "paketo-buildpacks/nginx"
+    version = "0.7.0"
+
+  [[order.group]]
+    id = "paketo-buildpacks/php-fpm"
+    version = "0.1.1"
+
+  [[order.group]]
+    id = "paketo-buildpacks/php-nginx"
+    version = "0.1.0"
+
+  [[order.group]]
+    id = "paketo-buildpacks/php-memcached-session-handler"
+    version = "0.1.0"
+    optional = true
+
+  [[order.group]]
+    id = "paketo-buildpacks/php-redis-session-handler"
+    version = "0.1.0"
+    optional = true
+
+  [[order.group]]
+    id = "paketo-buildpacks/php-start"
+    version = "0.2.0"
+
+  [[order.group]]
+    id = "paketo-buildpacks/procfile"
+    optional = true
+    version = "5.1.1"
+
+  [[order.group]]
+    id = "paketo-buildpacks/environment-variables"
+    optional = true
+    version = "4.1.1"
+
+  [[order.group]]
+    id = "paketo-buildpacks/image-labels"
+    optional = true
+    version = "4.1.1"
+
+[[order]]
+
+  [[order.group]]
+    id = "paketo-buildpacks/php-dist"
+    version = "1.0.0"
+
+  [[order.group]]
+    id = "paketo-buildpacks/composer"
+    optional = true
+    version = "0.1.0"
+
+  [[order.group]]
+    id = "paketo-buildpacks/composer-install"
+    optional = true
+    version = "0.1.0"
+
+  [[order.group]]
+    id = "paketo-buildpacks/php-builtin-server"
+    version = "0.2.1"
+
+  [[order.group]]
+    id = "paketo-buildpacks/php-memcached-session-handler"
+    version = "0.1.0"
+    optional = true
+
+  [[order.group]]
+    id = "paketo-buildpacks/php-redis-session-handler"
+    version = "0.1.0"
+    optional = true
 
   [[order.group]]
     id = "paketo-buildpacks/procfile"
