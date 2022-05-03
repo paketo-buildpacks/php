@@ -24,7 +24,7 @@
   uri = "docker://gcr.io/paketo-buildpacks/php-nginx:0.1.0"
 
 [[dependencies]]
-  uri = "docker://gcr.io/paketo-buildpacks/php-builtin-server:0.2.1"
+  uri = "docker://gcr.io/paketo-buildpacks/php-builtin-server:0.3.0"
 
 [[dependencies]]
   uri = "docker://gcr.io/paketo-buildpacks/php-fpm:0.1.1"
@@ -48,4 +48,4 @@
   uri = "docker://gcr.io/paketo-buildpacks/image-labels:4.1.1"
 
 [[dependencies]]
-  uri = "docker://gcr.io/paketo-buildpacks/ca-certificates:3.2.0"
+  uri = "docker://gcr.io/paketo-buildpacks/ca-certificates:3.2.1"
