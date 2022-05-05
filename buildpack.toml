@@ -17,7 +17,7 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/ca-certificates"
     optional = true
-    version = "3.2.1"
+    version = "3.2.2"
 
   [[order.group]]
     id = "paketo-buildpacks/php-dist"
@@ -31,7 +31,7 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/composer-install"
     optional = true
-    version = "0.1.0"
+    version = "0.1.1"
 
   [[order.group]]
     id = "paketo-buildpacks/httpd"
@@ -79,7 +79,7 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/ca-certificates"
     optional = true
-    version = "3.2.1"
+    version = "3.2.2"
 
   [[order.group]]
     id = "paketo-buildpacks/php-dist"
@@ -93,7 +93,7 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/composer-install"
     optional = true
-    version = "0.1.0"
+    version = "0.1.1"
 
   [[order.group]]
     id = "paketo-buildpacks/nginx"
@@ -150,7 +150,7 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/composer-install"
     optional = true
-    version = "0.1.0"
+    version = "0.1.1"
 
   [[order.group]]
     id = "paketo-buildpacks/php-builtin-server"
