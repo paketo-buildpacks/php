@@ -3,49 +3,49 @@
   uri = "build/buildpack.tgz"
 
 [[dependencies]]
-  uri = "docker://gcr.io/paketo-buildpacks/httpd:0.4.1"
+  uri = "urn:cnb:registry:paketo-buildpacks/httpd@0.4.1"
 
 [[dependencies]]
-  uri = "docker://gcr.io/paketo-buildpacks/nginx:0.7.0"
+  uri = "urn:cnb:registry:paketo-buildpacks/nginx@0.7.0"
 
 [[dependencies]]
-  uri = "docker://gcr.io/paketo-buildpacks/composer:0.1.0"
+  uri = "urn:cnb:registry:paketo-buildpacks/composer@0.1.0"
 
 [[dependencies]]
-  uri = "docker://gcr.io/paketo-buildpacks/composer-install:0.1.1"
+  uri = "urn:cnb:registry:paketo-buildpacks/composer-install@0.1.1"
 
 [[dependencies]]
-  uri = "docker://gcr.io/paketo-buildpacks/php-dist:1.0.0"
+  uri = "urn:cnb:registry:paketo-buildpacks/php-dist@1.0.0"
 
 [[dependencies]]
-  uri = "docker://gcr.io/paketo-buildpacks/php-httpd:0.2.0"
+  uri = "urn:cnb:registry:paketo-buildpacks/php-httpd@0.2.0"
 
 [[dependencies]]
-  uri = "docker://gcr.io/paketo-buildpacks/php-nginx:0.1.0"
+  uri = "urn:cnb:registry:paketo-buildpacks/php-nginx@0.1.0"
 
 [[dependencies]]
-  uri = "docker://gcr.io/paketo-buildpacks/php-builtin-server:0.3.0"
+  uri = "urn:cnb:registry:paketo-buildpacks/php-builtin-server@0.3.0"
 
 [[dependencies]]
-  uri = "docker://gcr.io/paketo-buildpacks/php-fpm:0.1.1"
+  uri = "urn:cnb:registry:paketo-buildpacks/php-fpm@0.1.1"
 
 [[dependencies]]
-  uri = "docker://gcr.io/paketo-buildpacks/php-start:0.2.0"
+  uri = "urn:cnb:registry:paketo-buildpacks/php-start@0.2.0"
 
 [[dependencies]]
-  uri = "docker://gcr.io/paketo-buildpacks/php-redis-session-handler:0.1.0"
+  uri = "urn:cnb:registry:paketo-buildpacks/php-redis-session-handler@0.1.0"
 
 [[dependencies]]
-  uri = "docker://gcr.io/paketo-buildpacks/php-memcached-session-handler:0.1.0"
+  uri = "urn:cnb:registry:paketo-buildpacks/php-memcached-session-handler@0.1.0"
 
 [[dependencies]]
-  uri = "docker://gcr.io/paketo-buildpacks/procfile:5.1.1"
+  uri = "urn:cnb:registry:paketo-buildpacks/procfile@5.1.1"
 
 [[dependencies]]
-  uri = "docker://gcr.io/paketo-buildpacks/environment-variables:4.1.1"
+  uri = "urn:cnb:registry:paketo-buildpacks/environment-variables@4.1.1"
 
 [[dependencies]]
-  uri = "docker://gcr.io/paketo-buildpacks/image-labels:4.1.1"
+  uri = "urn:cnb:registry:paketo-buildpacks/image-labels@4.1.1"
 
 [[dependencies]]
-  uri = "docker://gcr.io/paketo-buildpacks/ca-certificates:3.2.2"
+  uri = "urn:cnb:registry:paketo-buildpacks/ca-certificates@3.2.2"
