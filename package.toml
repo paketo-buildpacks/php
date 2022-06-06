@@ -18,10 +18,10 @@
   uri = "urn:cnb:registry:paketo-buildpacks/php-dist@1.0.0"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/php-httpd@0.2.0"
+  uri = "urn:cnb:registry:paketo-buildpacks/php-httpd@0.2.1"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/php-nginx@0.1.0"
+  uri = "urn:cnb:registry:paketo-buildpacks/php-nginx@0.1.1"
 
 [[dependencies]]
   uri = "urn:cnb:registry:paketo-buildpacks/php-builtin-server@0.3.0"

@@ -43,7 +43,7 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/php-httpd"
-    version = "0.2.0"
+    version = "0.2.1"
 
   [[order.group]]
     id = "paketo-buildpacks/php-memcached-session-handler"
@@ -105,7 +105,7 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/php-nginx"
-    version = "0.1.0"
+    version = "0.1.1"
 
   [[order.group]]
     id = "paketo-buildpacks/php-memcached-session-handler"
