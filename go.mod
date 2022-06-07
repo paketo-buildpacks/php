@@ -3,7 +3,7 @@ module github.com/paketo-buildpacks/php
 go 1.18
 
 require (
-	github.com/docker/docker v20.10.16+incompatible
+	github.com/docker/docker v20.10.17+incompatible
 	github.com/onsi/gomega v1.19.0
 	github.com/paketo-buildpacks/occam v0.9.0
 	github.com/sclevine/spec v1.4.0
