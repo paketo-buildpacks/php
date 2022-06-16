@@ -35,7 +35,7 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/httpd"
-    version = "0.4.1"
+    version = "0.4.2"
 
   [[order.group]]
     id = "paketo-buildpacks/php-fpm"
