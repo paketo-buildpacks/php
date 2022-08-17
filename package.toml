@@ -9,7 +9,7 @@
   uri = "urn:cnb:registry:paketo-buildpacks/nginx@0.9.0"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/composer@0.1.0"
+  uri = "urn:cnb:registry:paketo-buildpacks/composer@0.1.1"
 
 [[dependencies]]
   uri = "urn:cnb:registry:paketo-buildpacks/composer-install@0.1.2"
