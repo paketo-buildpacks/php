@@ -76,8 +76,8 @@ func testComposer(t *testing.T, context spec.G, it spec.S) {
 
 			Expect(logs).To(ContainLines(ContainSubstring("CA Certificates Buildpack")))
 			Expect(logs).To(ContainLines(ContainSubstring("PHP Distribution Buildpack")))
-			Expect(logs).To(ContainLines(ContainSubstring("Paketo Composer Buildpack")))
-			Expect(logs).To(ContainLines(ContainSubstring("Paketo Composer Install Buildpack")))
+			Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for Composer")))
+			Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for Composer Install")))
 			Expect(logs).To(ContainLines(ContainSubstring("Apache HTTP Server Buildpack")))
 			Expect(logs).To(ContainLines(ContainSubstring("PHP FPM Buildpack")))
 			Expect(logs).To(ContainLines(ContainSubstring("PHP HTTPD Buildpack")))
