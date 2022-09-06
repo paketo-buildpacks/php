@@ -110,7 +110,7 @@ func testMemcachedSessionHandler(t *testing.T, context spec.G, it spec.S) {
 			Eventually(container).Should(Serve(ContainSubstring("2")).WithClient(client).OnPort(8080).WithEndpoint("/index.php"))
 
 			Expect(logs).To(ContainLines(ContainSubstring("PHP Distribution Buildpack")))
-			Expect(logs).To(ContainLines(ContainSubstring("Nginx Server Buildpack")))
+			Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for Nginx Server")))
 			Expect(logs).To(ContainLines(ContainSubstring("PHP FPM Buildpack")))
 			Expect(logs).To(ContainLines(ContainSubstring("PHP Nginx Buildpack")))
 			Expect(logs).To(ContainLines(ContainSubstring("PHP Start Buildpack")))

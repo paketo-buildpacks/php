@@ -76,17 +76,17 @@ func testPhpNginx(t *testing.T, context spec.G, it spec.S) {
 
 			Eventually(container).Should(Serve(ContainSubstring("SUCCESS: date loads.")).OnPort(8080).WithEndpoint("/index.php?date"))
 
-			Expect(logs).To(ContainLines(ContainSubstring("CA Certificates Buildpack")))
+			Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for CA Certificates")))
 			Expect(logs).To(ContainLines(ContainSubstring("PHP Distribution Buildpack")))
 			Expect(logs).To(ContainLines(ContainSubstring("Composer Buildpack")))
 			Expect(logs).To(ContainLines(ContainSubstring("Composer Install Buildpack")))
-			Expect(logs).To(ContainLines(ContainSubstring("Nginx Server Buildpack")))
+			Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for Nginx Server")))
 			Expect(logs).To(ContainLines(ContainSubstring("PHP FPM Buildpack")))
 			Expect(logs).To(ContainLines(ContainSubstring("PHP Nginx Buildpack")))
 			Expect(logs).To(ContainLines(ContainSubstring("PHP Start Buildpack")))
-			Expect(logs).NotTo(ContainLines(ContainSubstring("Procfile Buildpack")))
-			Expect(logs).NotTo(ContainLines(ContainSubstring("Environment Variables Buildpack")))
-			Expect(logs).NotTo(ContainLines(ContainSubstring("Image Labels Buildpack")))
+			Expect(logs).NotTo(ContainLines(ContainSubstring("Paketo Buildpack for Procfile")))
+			Expect(logs).NotTo(ContainLines(ContainSubstring("Paketo Buildpack for Environment Variables")))
+			Expect(logs).NotTo(ContainLines(ContainSubstring("Paketo Buildpack for Image Labels")))
 
 			// Ensure FPM is running as well
 			Eventually(func() string {
@@ -133,18 +133,18 @@ func testPhpNginx(t *testing.T, context spec.G, it spec.S) {
 
 				Eventually(container).Should(Serve(ContainSubstring("SUCCESS: date loads.")).OnPort(8080).WithEndpoint("/index.php?date"))
 
-				Expect(logs).To(ContainLines(ContainSubstring("CA Certificates Buildpack")))
+				Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for CA Certificates")))
 				Expect(logs).To(ContainLines(ContainSubstring("PHP Distribution Buildpack")))
 				Expect(logs).To(ContainLines(ContainSubstring("Composer Buildpack")))
 				Expect(logs).To(ContainLines(ContainSubstring("Composer Install Buildpack")))
-				Expect(logs).To(ContainLines(ContainSubstring("Nginx Server Buildpack")))
+				Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for Nginx Server")))
 				Expect(logs).To(ContainLines(ContainSubstring("PHP FPM Buildpack")))
 				Expect(logs).To(ContainLines(ContainSubstring("PHP Nginx Buildpack")))
 				Expect(logs).To(ContainLines(ContainSubstring("PHP Start Buildpack")))
-				Expect(logs).To(ContainLines(ContainSubstring("Procfile Buildpack")))
+				Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for Procfile")))
 				Expect(logs).To(ContainLines(ContainSubstring("web: procmgr-binary /layers/paketo-buildpacks_php-start/php-start/procs.yml && echo hi")))
-				Expect(logs).To(ContainLines(ContainSubstring("Environment Variables Buildpack")))
-				Expect(logs).To(ContainLines(ContainSubstring("Image Labels Buildpack")))
+				Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for Environment Variables")))
+				Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for Image Labels")))
 
 				Expect(image.Buildpacks[9].Key).To(Equal("paketo-buildpacks/environment-variables"))
 				Expect(image.Buildpacks[9].Layers["environment-variables"].Metadata["variables"]).To(Equal(map[string]interface{}{"SOME_VARIABLE": "fish-n-chips"}))
@@ -196,9 +196,9 @@ func testPhpNginx(t *testing.T, context spec.G, it spec.S) {
 					Execute(name, filepath.Join(source, "nginx_app"))
 				Expect(err).NotTo(HaveOccurred())
 
-				Expect(logs).To(ContainLines(ContainSubstring("CA Certificates Buildpack")))
+				Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for CA Certificates")))
 				Expect(logs).To(ContainLines(ContainSubstring("PHP Distribution Buildpack")))
-				Expect(logs).To(ContainLines(ContainSubstring("Nginx Server Buildpack")))
+				Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for Nginx Server")))
 				Expect(logs).To(ContainLines(ContainSubstring("PHP FPM Buildpack")))
 				Expect(logs).To(ContainLines(ContainSubstring("PHP Nginx Buildpack")))
 				Expect(logs).To(ContainLines(ContainSubstring("PHP Start Buildpack")))

@@ -76,9 +76,9 @@ func testPhpBuiltinServer(t *testing.T, context spec.G, it spec.S) {
 			Expect(logs).To(ContainLines(ContainSubstring("Composer Buildpack")))
 			Expect(logs).To(ContainLines(ContainSubstring("Composer Install Buildpack")))
 			Expect(logs).To(ContainLines(ContainSubstring("PHP Built-in Server Buildpack")))
-			Expect(logs).NotTo(ContainLines(ContainSubstring("Procfile Buildpack")))
-			Expect(logs).NotTo(ContainLines(ContainSubstring("Environment Variables Buildpack")))
-			Expect(logs).NotTo(ContainLines(ContainSubstring("Image Labels Buildpack")))
+			Expect(logs).NotTo(ContainLines(ContainSubstring("Paketo Buildpack for Procfile")))
+			Expect(logs).NotTo(ContainLines(ContainSubstring("Paketo Buildpack for Environment Variables")))
+			Expect(logs).NotTo(ContainLines(ContainSubstring("Paketo Buildpack for Image Labels")))
 		})
 
 		context("using optional utility buildpacks", func() {
@@ -118,9 +118,9 @@ func testPhpBuiltinServer(t *testing.T, context spec.G, it spec.S) {
 				Expect(logs).To(ContainLines(ContainSubstring("Composer Buildpack")))
 				Expect(logs).To(ContainLines(ContainSubstring("Composer Install Buildpack")))
 				Expect(logs).To(ContainLines(ContainSubstring("PHP Built-in Server Buildpack")))
-				Expect(logs).To(ContainLines(ContainSubstring("Procfile Buildpack")))
-				Expect(logs).To(ContainLines(ContainSubstring("Environment Variables Buildpack")))
-				Expect(logs).To(ContainLines(ContainSubstring("Image Labels Buildpack")))
+				Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for Procfile")))
+				Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for Environment Variables")))
+				Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for Image Labels")))
 
 				Expect(image.Buildpacks[5].Key).To(Equal("paketo-buildpacks/environment-variables"))
 				Expect(image.Buildpacks[5].Layers["environment-variables"].Metadata["variables"]).To(Equal(map[string]interface{}{"SOME_VARIABLE": "stew-peas"}))
