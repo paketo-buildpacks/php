@@ -76,17 +76,17 @@ func testPhpHttpd(t *testing.T, context spec.G, it spec.S) {
 
 			Eventually(container).Should(Serve(ContainSubstring("SUCCESS: date loads.")).OnPort(8080).WithEndpoint("/index.php?date"))
 
-			Expect(logs).To(ContainLines(ContainSubstring("CA Certificates Buildpack")))
-			Expect(logs).To(ContainLines(ContainSubstring("PHP Distribution Buildpack")))
-			Expect(logs).To(ContainLines(ContainSubstring("Composer Buildpack")))
-			Expect(logs).To(ContainLines(ContainSubstring("Composer Install Buildpack")))
-			Expect(logs).To(ContainLines(ContainSubstring("Apache HTTP Server Buildpack")))
-			Expect(logs).To(ContainLines(ContainSubstring("PHP FPM Buildpack")))
-			Expect(logs).To(ContainLines(ContainSubstring("PHP HTTPD Buildpack")))
-			Expect(logs).To(ContainLines(ContainSubstring("PHP Start Buildpack")))
-			Expect(logs).NotTo(ContainLines(ContainSubstring("Procfile Buildpack")))
-			Expect(logs).NotTo(ContainLines(ContainSubstring("Environment Variables Buildpack")))
-			Expect(logs).NotTo(ContainLines(ContainSubstring("Image Labels Buildpack")))
+			Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for CA Certificates")))
+			Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for PHP Distribution")))
+			Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for Composer")))
+			Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for Composer Install")))
+			Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for Apache HTTP Server")))
+			Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for PHP FPM")))
+			Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for PHP HTTPD")))
+			Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for PHP Start")))
+			Expect(logs).NotTo(ContainLines(ContainSubstring("Paketo Buildpack for Procfile")))
+			Expect(logs).NotTo(ContainLines(ContainSubstring("Paketo Buildpack for Environment Variables")))
+			Expect(logs).NotTo(ContainLines(ContainSubstring("Paketo Buildpack for Image Labels")))
 
 			// Ensure FPM is running as well
 			Eventually(func() string {
@@ -134,16 +134,16 @@ func testPhpHttpd(t *testing.T, context spec.G, it spec.S) {
 				Eventually(container).Should(Serve(ContainSubstring("SUCCESS: date loads.")).OnPort(8080).WithEndpoint("/index.php?date"))
 				Expect(logs).To(ContainLines(ContainSubstring("web: php-fpm -y $PHP_FPM_PATH & httpd -f $PHP_HTTPD_PATH -k start -DFOREGROUND && echo hi")))
 
-				Expect(logs).To(ContainLines(ContainSubstring("CA Certificates Buildpack")))
-				Expect(logs).To(ContainLines(ContainSubstring("PHP Distribution Buildpack")))
-				Expect(logs).To(ContainLines(ContainSubstring("Composer Buildpack")))
-				Expect(logs).To(ContainLines(ContainSubstring("Composer Install Buildpack")))
-				Expect(logs).To(ContainLines(ContainSubstring("Apache HTTP Server Buildpack")))
-				Expect(logs).To(ContainLines(ContainSubstring("PHP FPM Buildpack")))
-				Expect(logs).To(ContainLines(ContainSubstring("PHP HTTPD Buildpack")))
-				Expect(logs).To(ContainLines(ContainSubstring("Procfile Buildpack")))
-				Expect(logs).To(ContainLines(ContainSubstring("Environment Variables Buildpack")))
-				Expect(logs).To(ContainLines(ContainSubstring("Image Labels Buildpack")))
+				Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for CA Certificates")))
+				Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for PHP Distribution")))
+				Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for Composer")))
+				Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for Composer Install")))
+				Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for Apache HTTP Server")))
+				Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for PHP FPM")))
+				Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for PHP HTTPD")))
+				Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for Procfile")))
+				Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for Environment Variables")))
+				Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for Image Labels")))
 
 				Expect(image.Buildpacks[9].Key).To(Equal("paketo-buildpacks/environment-variables"))
 				Expect(image.Buildpacks[9].Layers["environment-variables"].Metadata["variables"]).To(Equal(map[string]interface{}{"SOME_VARIABLE": "stew-peas"}))
@@ -195,11 +195,11 @@ func testPhpHttpd(t *testing.T, context spec.G, it spec.S) {
 					Execute(name, filepath.Join(source, "httpd_app"))
 				Expect(err).NotTo(HaveOccurred())
 
-				Expect(logs).To(ContainLines(ContainSubstring("CA Certificates Buildpack")))
-				Expect(logs).To(ContainLines(ContainSubstring("PHP Distribution Buildpack")))
-				Expect(logs).To(ContainLines(ContainSubstring("Apache HTTP Server Buildpack")))
-				Expect(logs).To(ContainLines(ContainSubstring("PHP FPM Buildpack")))
-				Expect(logs).To(ContainLines(ContainSubstring("PHP HTTPD Buildpack")))
+				Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for CA Certificates")))
+				Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for PHP Distribution")))
+				Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for Apache HTTP Server")))
+				Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for PHP FPM")))
+				Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for PHP HTTPD")))
 
 				container, err = docker.Container.Run.
 					WithPublish("8080").

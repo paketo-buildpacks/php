@@ -74,14 +74,14 @@ func testComposer(t *testing.T, context spec.G, it spec.S) {
 
 			Expect(logs).To(ContainLines(ContainSubstring("Detected existing vendored packages, will run 'composer install' with those packages")))
 
-			Expect(logs).To(ContainLines(ContainSubstring("CA Certificates Buildpack")))
-			Expect(logs).To(ContainLines(ContainSubstring("PHP Distribution Buildpack")))
+			Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for CA Certificates")))
+			Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for PHP Distribution")))
 			Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for Composer")))
 			Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for Composer Install")))
-			Expect(logs).To(ContainLines(ContainSubstring("Apache HTTP Server Buildpack")))
-			Expect(logs).To(ContainLines(ContainSubstring("PHP FPM Buildpack")))
-			Expect(logs).To(ContainLines(ContainSubstring("PHP HTTPD Buildpack")))
-			Expect(logs).To(ContainLines(ContainSubstring("PHP Start Buildpack")))
+			Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for Apache HTTP Server")))
+			Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for PHP FPM")))
+			Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for PHP HTTPD")))
+			Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for PHP Start")))
 		})
 	})
 }
