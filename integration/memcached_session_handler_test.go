@@ -109,12 +109,12 @@ func testMemcachedSessionHandler(t *testing.T, context spec.G, it spec.S) {
 			Eventually(container).Should(Serve(ContainSubstring("1")).WithClient(client).OnPort(8080).WithEndpoint("/index.php"))
 			Eventually(container).Should(Serve(ContainSubstring("2")).WithClient(client).OnPort(8080).WithEndpoint("/index.php"))
 
-			Expect(logs).To(ContainLines(ContainSubstring("PHP Distribution Buildpack")))
+			Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for PHP Distribution")))
 			Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for Nginx Server")))
-			Expect(logs).To(ContainLines(ContainSubstring("PHP FPM Buildpack")))
-			Expect(logs).To(ContainLines(ContainSubstring("PHP Nginx Buildpack")))
-			Expect(logs).To(ContainLines(ContainSubstring("PHP Start Buildpack")))
-			Expect(logs).To(ContainLines(ContainSubstring("PHP Memcached Session Handler Buildpack")))
+			Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for PHP FPM")))
+			Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for PHP Nginx")))
+			Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for PHP Start")))
+			Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for PHP Memcached Session Handler")))
 		})
 	})
 }
