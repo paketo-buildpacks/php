@@ -1,4 +1,4 @@
-# PHP Paketo Buildpack
+# Paketo Buildpack for PHP
 ## `gcr.io/paketo-buildpacks/php`
 
 The PHP Paketo Buildpack provides a set of collaborating buildpacks that
