@@ -29,11 +29,12 @@ func TestIntegration(t *testing.T) {
 	SetDefaultEventuallyTimeout(10 * time.Second)
 
 	suite := spec.New("Integration", spec.Parallel(), spec.Report(report.Terminal{}))
+	suite("Builtin Server", testPhpBuiltinServer)
 	suite("Composer", testComposer)
 	suite("HTTPD", testPhpHttpd)
-	suite("Nginx", testPhpNginx)
-	suite("Builtin Server", testPhpBuiltinServer)
-	suite("Redis Session Handler", testRedisSessionHandler)
 	suite("Memcached Session Handler", testMemcachedSessionHandler)
+	suite("Nginx", testPhpNginx)
+	suite("Redis Session Handler", testRedisSessionHandler)
+	suite("Reproducible Builds", testReproducibleBuilds)
 	suite.Run(t)
 }

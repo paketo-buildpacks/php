@@ -49,6 +49,7 @@ func testRedisSessionHandler(t *testing.T, context spec.G, it spec.S) {
 
 			source, err = occam.Source(filepath.Join("testdata", "session_handler_apps"))
 			Expect(err).NotTo(HaveOccurred())
+
 			binding = filepath.Join(source, "redis_binding")
 
 			redisContainer, err = docker.Container.Run.
