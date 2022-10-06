@@ -9,13 +9,13 @@
   uri = "urn:cnb:registry:paketo-buildpacks/nginx@0.11.1"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/composer@0.2.1"
+  uri = "urn:cnb:registry:paketo-buildpacks/composer@0.2.3"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/composer-install@0.1.4"
+  uri = "urn:cnb:registry:paketo-buildpacks/composer-install@0.1.5"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/php-dist@1.1.2"
+  uri = "urn:cnb:registry:paketo-buildpacks/php-dist@1.1.3"
 
 [[dependencies]]
   uri = "urn:cnb:registry:paketo-buildpacks/php-httpd@0.2.4"
