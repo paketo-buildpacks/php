@@ -4,7 +4,7 @@ go 1.18
 
 require (
 	github.com/docker/docker v20.10.18+incompatible
-	github.com/onsi/gomega v1.20.2
+	github.com/onsi/gomega v1.21.1
 	github.com/paketo-buildpacks/occam v0.13.2
 	github.com/sclevine/spec v1.4.0
 )
