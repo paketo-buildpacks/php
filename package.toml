@@ -21,22 +21,22 @@
   uri = "urn:cnb:registry:paketo-buildpacks/php-httpd@0.2.5"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/php-nginx@0.1.4"
+  uri = "urn:cnb:registry:paketo-buildpacks/php-nginx@0.1.5"
 
 [[dependencies]]
   uri = "urn:cnb:registry:paketo-buildpacks/php-builtin-server@0.3.2"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/php-fpm@0.1.5"
+  uri = "urn:cnb:registry:paketo-buildpacks/php-fpm@0.1.6"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/php-start@0.2.2"
+  uri = "urn:cnb:registry:paketo-buildpacks/php-start@0.2.3"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/php-redis-session-handler@0.1.2"
+  uri = "urn:cnb:registry:paketo-buildpacks/php-redis-session-handler@0.1.3"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/php-memcached-session-handler@0.1.2"
+  uri = "urn:cnb:registry:paketo-buildpacks/php-memcached-session-handler@0.1.3"
 
 [[dependencies]]
   uri = "urn:cnb:registry:paketo-buildpacks/procfile@5.4.0"
