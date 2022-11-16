@@ -26,7 +26,7 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/composer"
     optional = true
-    version = "0.2.5"
+    version = "0.2.6"
 
   [[order.group]]
     id = "paketo-buildpacks/composer-install"
@@ -39,7 +39,7 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/php-fpm"
-    version = "0.1.8"
+    version = "0.1.9"
 
   [[order.group]]
     id = "paketo-buildpacks/php-httpd"
@@ -57,7 +57,7 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/php-start"
-    version = "0.3.0"
+    version = "0.3.1"
 
   [[order.group]]
     id = "paketo-buildpacks/procfile"
@@ -88,7 +88,7 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/composer"
     optional = true
-    version = "0.2.5"
+    version = "0.2.6"
 
   [[order.group]]
     id = "paketo-buildpacks/composer-install"
@@ -101,11 +101,11 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/php-fpm"
-    version = "0.1.8"
+    version = "0.1.9"
 
   [[order.group]]
     id = "paketo-buildpacks/php-nginx"
-    version = "0.1.7"
+    version = "0.1.8"
 
   [[order.group]]
     id = "paketo-buildpacks/php-memcached-session-handler"
@@ -119,7 +119,7 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/php-start"
-    version = "0.3.0"
+    version = "0.3.1"
 
   [[order.group]]
     id = "paketo-buildpacks/procfile"
@@ -145,7 +145,7 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/composer"
     optional = true
-    version = "0.2.5"
+    version = "0.2.6"
 
   [[order.group]]
     id = "paketo-buildpacks/composer-install"
@@ -154,7 +154,7 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/php-builtin-server"
-    version = "0.3.5"
+    version = "0.3.6"
 
   [[order.group]]
     id = "paketo-buildpacks/php-memcached-session-handler"
