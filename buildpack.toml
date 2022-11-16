@@ -21,7 +21,7 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/php-dist"
-    version = "1.1.5"
+    version = "1.1.6"
 
   [[order.group]]
     id = "paketo-buildpacks/composer"
@@ -31,7 +31,7 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/composer-install"
     optional = true
-    version = "0.1.7"
+    version = "0.1.8"
 
   [[order.group]]
     id = "paketo-buildpacks/httpd"
@@ -43,12 +43,12 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/php-httpd"
-    version = "0.2.7"
+    version = "0.2.8"
 
   [[order.group]]
     id = "paketo-buildpacks/php-memcached-session-handler"
     optional = true
-    version = "0.1.5"
+    version = "0.1.6"
 
   [[order.group]]
     id = "paketo-buildpacks/php-redis-session-handler"
@@ -83,7 +83,7 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/php-dist"
-    version = "1.1.5"
+    version = "1.1.6"
 
   [[order.group]]
     id = "paketo-buildpacks/composer"
@@ -93,7 +93,7 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/composer-install"
     optional = true
-    version = "0.1.7"
+    version = "0.1.8"
 
   [[order.group]]
     id = "paketo-buildpacks/nginx"
@@ -110,7 +110,7 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/php-memcached-session-handler"
     optional = true
-    version = "0.1.5"
+    version = "0.1.6"
 
   [[order.group]]
     id = "paketo-buildpacks/php-redis-session-handler"
@@ -140,7 +140,7 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/php-dist"
-    version = "1.1.5"
+    version = "1.1.6"
 
   [[order.group]]
     id = "paketo-buildpacks/composer"
@@ -150,7 +150,7 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/composer-install"
     optional = true
-    version = "0.1.7"
+    version = "0.1.8"
 
   [[order.group]]
     id = "paketo-buildpacks/php-builtin-server"
@@ -159,7 +159,7 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/php-memcached-session-handler"
     optional = true
-    version = "0.1.5"
+    version = "0.1.6"
 
   [[order.group]]
     id = "paketo-buildpacks/php-redis-session-handler"
