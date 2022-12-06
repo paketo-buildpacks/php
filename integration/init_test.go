@@ -6,6 +6,7 @@ import (
 	"testing"
 	"time"
 
+	"github.com/paketo-buildpacks/occam"
 	"github.com/sclevine/spec"
 	"github.com/sclevine/spec/report"
 
@@ -16,6 +17,7 @@ import (
 var phpBuildpack string
 
 func TestIntegration(t *testing.T) {
+	pack := occam.NewPack()
 	Expect := NewWithT(t).Expect
 
 	format.MaxLength = 0
@@ -28,7 +30,15 @@ func TestIntegration(t *testing.T) {
 
 	SetDefaultEventuallyTimeout(10 * time.Second)
 
+	builder, err := pack.Builder.Inspect.Execute()
+	Expect(err).NotTo(HaveOccurred())
+
 	suite := spec.New("Integration", spec.Parallel(), spec.Report(report.Terminal{}))
+	// This test will only run on the Bionic full stack, to test the stack upgrade scenario.
+	// All other tests will run against the Bionic full stack and Jammy full stack
+	if builder.BuilderName == "paketobuildpacks/builder:buildpackless-full" {
+		suite("StackUpgrades", testStackUpgrades)
+	}
 	suite("Composer", testComposer)
 	suite("HTTPD", testPhpHttpd)
 	suite("Nginx", testPhpNginx)

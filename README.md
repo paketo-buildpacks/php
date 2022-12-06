@@ -34,7 +34,8 @@ This buildpack also includes the following utility buildpacks:
 
 #### The PHP buildpack is compatible with the following builder(s):
 
-- [Paketo Full Builder](https://github.com/paketo-buildpacks/full-builder)
+- [Paketo Jammy Full Builder](https://github.com/paketo-buildpacks/builder-jammy-full)
+- [Paketo Bionic Full Builder](https://github.com/paketo-buildpacks/full-builder)
 
 #### Docs
 
