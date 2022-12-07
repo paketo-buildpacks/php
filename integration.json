@@ -1,3 +1,6 @@
 {
-  "builder":"index.docker.io/paketobuildpacks/builder:buildpackless-full"
+  "builders": [
+    "index.docker.io/paketobuildpacks/builder-jammy-buildpackless-full:latest",
+    "index.docker.io/paketobuildpacks/builder:buildpackless-full"
+   ]
 }
