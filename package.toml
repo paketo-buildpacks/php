@@ -12,7 +12,7 @@
   uri = "urn:cnb:registry:paketo-buildpacks/composer@0.4.0"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/composer-install@0.2.1"
+  uri = "urn:cnb:registry:paketo-buildpacks/composer-install@0.3.0"
 
 [[dependencies]]
   uri = "urn:cnb:registry:paketo-buildpacks/php-dist@2.0.1"
