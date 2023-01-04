@@ -34,16 +34,19 @@ func TestIntegration(t *testing.T) {
 	Expect(err).NotTo(HaveOccurred())
 
 	suite := spec.New("Integration", spec.Parallel(), spec.Report(report.Terminal{}))
+
 	// This test will only run on the Bionic full stack, to test the stack upgrade scenario.
 	// All other tests will run against the Bionic full stack and Jammy full stack
 	if builder.BuilderName == "paketobuildpacks/builder:buildpackless-full" {
 		suite("StackUpgrades", testStackUpgrades)
 	}
+
+	suite("Builtin Server", testPhpBuiltinServer)
 	suite("Composer", testComposer)
 	suite("HTTPD", testPhpHttpd)
-	suite("Nginx", testPhpNginx)
-	suite("Builtin Server", testPhpBuiltinServer)
-	suite("Redis Session Handler", testRedisSessionHandler)
 	suite("Memcached Session Handler", testMemcachedSessionHandler)
+	suite("Nginx", testPhpNginx)
+	suite("Redis Session Handler", testRedisSessionHandler)
+	suite("Reproducible Builds", testReproducibleBuilds)
 	suite.Run(t)
 }
