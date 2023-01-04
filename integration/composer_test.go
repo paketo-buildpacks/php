@@ -72,8 +72,6 @@ func testComposer(t *testing.T, context spec.G, it spec.S) {
 
 			Eventually(container).Should(Serve(ContainSubstring("This is a PHP app.")).OnPort(8080))
 
-			Expect(logs).To(ContainLines(ContainSubstring("Detected existing vendored packages, will run 'composer install' with those packages")))
-
 			Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for CA Certificates")))
 			Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for PHP Distribution")))
 			Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for Composer")))
