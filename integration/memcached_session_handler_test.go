@@ -1,7 +1,6 @@
 package integration_test
 
 import (
-	gocontext "context"
 	"fmt"
 	"net/http"
 	"net/http/cookiejar"
@@ -9,8 +8,6 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/docker/docker/api/types"
-	"github.com/docker/docker/client"
 	"github.com/paketo-buildpacks/occam"
 	"github.com/sclevine/spec"
 
@@ -69,12 +66,6 @@ func testMemcachedSessionHandler(t *testing.T, context spec.G, it spec.S) {
 			Expect(docker.Image.Remove.Execute(image.ID)).To(Succeed())
 			Expect(docker.Volume.Remove.Execute(occam.CacheVolumeNames(name))).To(Succeed())
 			Expect(os.RemoveAll(source)).To(Succeed())
-			// Clean up memcached image
-			dockerClient, err := client.NewClientWithOpts(client.FromEnv, client.WithAPIVersionNegotiation())
-			Expect(err).NotTo(HaveOccurred())
-
-			_, err = dockerClient.ImageRemove(gocontext.Background(), "memcached:latest", types.ImageRemoveOptions{Force: true})
-			Expect(err).NotTo(HaveOccurred())
 		})
 
 		it("creates a working OCI image", func() {
