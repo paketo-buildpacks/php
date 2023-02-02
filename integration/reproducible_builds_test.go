@@ -1,14 +1,11 @@
 package integration_test
 
 import (
-	gocontext "context"
 	"fmt"
 	"os"
 	"path/filepath"
 	"testing"
 
-	"github.com/docker/docker/api/types"
-	"github.com/docker/docker/client"
 	"github.com/paketo-buildpacks/occam"
 	"github.com/sclevine/spec"
 
@@ -271,7 +268,7 @@ func testReproducibleBuilds(t *testing.T, context spec.G, it spec.S) {
 
 			memcachedContainer, err = docker.Container.Run.
 				WithPublish("11211").
-				Execute("memcached")
+				Execute(memcachedImage)
 			Expect(err).NotTo(HaveOccurred())
 
 			ipAddress, err := memcachedContainer.IPAddressForNetwork("bridge")
@@ -286,13 +283,7 @@ func testReproducibleBuilds(t *testing.T, context spec.G, it spec.S) {
 			Expect(docker.Volume.Remove.Execute(occam.CacheVolumeNames(name))).To(Succeed())
 			Expect(os.RemoveAll(source)).To(Succeed())
 
-			// Clean up memcached image
 			Expect(docker.Container.Remove.Execute(memcachedContainer.ID)).To(Succeed())
-			dockerClient, err := client.NewClientWithOpts(client.FromEnv, client.WithAPIVersionNegotiation())
-			Expect(err).NotTo(HaveOccurred())
-
-			_, err = dockerClient.ImageRemove(gocontext.Background(), "memcached:latest", types.ImageRemoveOptions{Force: true})
-			Expect(err).NotTo(HaveOccurred())
 		})
 
 		it("creates a two identical images from the same input", func() {
@@ -356,7 +347,7 @@ func testReproducibleBuilds(t *testing.T, context spec.G, it spec.S) {
 
 			redisContainer, err = docker.Container.Run.
 				WithPublish("6379").
-				Execute("redis:latest")
+				Execute(redisImage)
 			Expect(err).NotTo(HaveOccurred())
 
 			ipAddress, err := redisContainer.IPAddressForNetwork("bridge")
@@ -370,13 +361,7 @@ func testReproducibleBuilds(t *testing.T, context spec.G, it spec.S) {
 			Expect(docker.Volume.Remove.Execute(occam.CacheVolumeNames(name))).To(Succeed())
 			Expect(os.RemoveAll(source)).To(Succeed())
 
-			// Clean up redis image
 			Expect(docker.Container.Remove.Execute(redisContainer.ID)).To(Succeed())
-			dockerClient, err := client.NewClientWithOpts(client.FromEnv, client.WithAPIVersionNegotiation())
-			Expect(err).NotTo(HaveOccurred())
-
-			_, err = dockerClient.ImageRemove(gocontext.Background(), "redis:latest", types.ImageRemoveOptions{Force: true})
-			Expect(err).NotTo(HaveOccurred())
 		})
 
 		it("creates a two identical images from the same input", func() {
