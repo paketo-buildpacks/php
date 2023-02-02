@@ -3,9 +3,8 @@ module github.com/paketo-buildpacks/php
 go 1.18
 
 require (
-	github.com/docker/docker v20.10.23+incompatible
 	github.com/onsi/gomega v1.26.0
-	github.com/paketo-buildpacks/occam v0.14.0
+	github.com/paketo-buildpacks/occam v0.15.0
 	github.com/sclevine/spec v1.4.0
 )
 
@@ -18,6 +17,7 @@ require (
 	github.com/containerd/cgroups v1.0.4 // indirect
 	github.com/containerd/containerd v1.6.12 // indirect
 	github.com/docker/distribution v2.8.1+incompatible // indirect
+	github.com/docker/docker v20.10.23+incompatible // indirect
 	github.com/docker/go-connections v0.4.0 // indirect
 	github.com/docker/go-units v0.5.0 // indirect
 	github.com/gabriel-vasile/mimetype v1.4.1 // indirect
