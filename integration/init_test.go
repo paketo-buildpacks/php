@@ -1,11 +1,14 @@
 package integration_test
 
 import (
+	gocontext "context"
 	"os/exec"
 	"path/filepath"
 	"testing"
 	"time"
 
+	"github.com/docker/docker/api/types"
+	"github.com/docker/docker/client"
 	"github.com/paketo-buildpacks/occam"
 	"github.com/sclevine/spec"
 	"github.com/sclevine/spec/report"
@@ -49,4 +52,14 @@ func TestIntegration(t *testing.T) {
 	suite("Redis Session Handler", testRedisSessionHandler)
 	suite("Reproducible Builds", testReproducibleBuilds)
 	suite.Run(t)
+
+	// Clean up memcached image
+	dockerClient, err := client.NewClientWithOpts(client.FromEnv, client.WithAPIVersionNegotiation())
+	Expect(err).NotTo(HaveOccurred())
+
+	_, err = dockerClient.ImageRemove(gocontext.Background(), "memcached:latest", types.ImageRemoveOptions{Force: true})
+	Expect(err).NotTo(HaveOccurred())
+
+	_, err = dockerClient.ImageRemove(gocontext.Background(), "redis:latest", types.ImageRemoveOptions{Force: true})
+	Expect(err).NotTo(HaveOccurred())
 }
