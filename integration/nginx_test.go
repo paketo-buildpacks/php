@@ -4,7 +4,6 @@ import (
 	"crypto/tls"
 	"crypto/x509"
 	"fmt"
-	"io"
 	"net/http"
 	"os"
 	"path/filepath"
@@ -222,22 +221,7 @@ func testPhpNginx(t *testing.T, context spec.G, it spec.S) {
 					ContainSubstring("Added 1 additional CA certificate(s) to system truststore"),
 				)
 
-				request, err := http.NewRequest("GET", fmt.Sprintf("https://localhost:%s", container.HostPort("8080")), nil)
-				Expect(err).NotTo(HaveOccurred())
-
-				var response *http.Response
-				Eventually(func() error {
-					var err error
-					response, err = client.Do(request)
-					return err
-				}).Should(BeNil())
-				defer response.Body.Close()
-
-				Expect(response.StatusCode).To(Equal(http.StatusOK))
-
-				content, err := io.ReadAll(response.Body)
-				Expect(err).NotTo(HaveOccurred())
-				Expect(string(content)).To(ContainSubstring("Hello world, Authenticated User!"))
+				Eventually(container).Should(Serve(ContainSubstring("Hello world, Authenticated User!")).OnPort(8080).WithProtocol("https").WithEndpoint("/").WithClient(client))
 			})
 		})
 	})
