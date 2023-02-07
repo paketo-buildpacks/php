@@ -21,7 +21,7 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/php-dist"
-    version = "2.0.3"
+    version = "2.0.4"
 
   [[order.group]]
     id = "paketo-buildpacks/composer"
@@ -83,7 +83,7 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/php-dist"
-    version = "2.0.3"
+    version = "2.0.4"
 
   [[order.group]]
     id = "paketo-buildpacks/composer"
@@ -140,7 +140,7 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/php-dist"
-    version = "2.0.3"
+    version = "2.0.4"
 
   [[order.group]]
     id = "paketo-buildpacks/composer"
