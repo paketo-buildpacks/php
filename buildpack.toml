@@ -53,7 +53,7 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/php-redis-session-handler"
     optional = true
-    version = "0.2.6"
+    version = "0.2.7"
 
   [[order.group]]
     id = "paketo-buildpacks/php-start"
@@ -115,7 +115,7 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/php-redis-session-handler"
     optional = true
-    version = "0.2.6"
+    version = "0.2.7"
 
   [[order.group]]
     id = "paketo-buildpacks/php-start"
@@ -164,7 +164,7 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/php-redis-session-handler"
     optional = true
-    version = "0.2.6"
+    version = "0.2.7"
 
   [[order.group]]
     id = "paketo-buildpacks/procfile"
