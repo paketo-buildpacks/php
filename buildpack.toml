@@ -72,7 +72,7 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/image-labels"
     optional = true
-    version = "4.5.0"
+    version = "4.5.1"
 
 [[order]]
 
@@ -134,7 +134,7 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/image-labels"
     optional = true
-    version = "4.5.0"
+    version = "4.5.1"
 
 [[order]]
 
@@ -179,4 +179,4 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/image-labels"
     optional = true
-    version = "4.5.0"
+    version = "4.5.1"
