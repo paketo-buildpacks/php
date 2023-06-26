@@ -189,7 +189,8 @@ func testPhpNginx(t *testing.T, context spec.G, it spec.S) {
 				image, logs, err = pack.WithNoColor().Build.
 					WithBuildpacks(phpBuildpack).
 					WithEnv(map[string]string{
-						"BP_PHP_SERVER": "nginx",
+						"BP_PHP_SERVER":             "nginx",
+						"BP_PHP_NGINX_ENABLE_HTTPS": "true",
 					}).
 					WithPullPolicy("never").
 					Execute(name, filepath.Join(source, "nginx_app"))
