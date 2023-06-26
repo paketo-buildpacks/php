@@ -21,7 +21,7 @@
   uri = "urn:cnb:registry:paketo-buildpacks/php-httpd@0.3.14"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/php-nginx@0.2.14"
+  uri = "urn:cnb:registry:paketo-buildpacks/php-nginx@0.3.0"
 
 [[dependencies]]
   uri = "urn:cnb:registry:paketo-buildpacks/php-builtin-server@0.4.13"
