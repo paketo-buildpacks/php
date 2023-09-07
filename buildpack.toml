@@ -97,7 +97,7 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/nginx"
-    version = "0.15.4"
+    version = "0.15.5"
 
   [[order.group]]
     id = "paketo-buildpacks/php-fpm"
