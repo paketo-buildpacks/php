@@ -37,7 +37,7 @@ require (
 	github.com/opencontainers/runc v1.1.5 // indirect
 	github.com/paketo-buildpacks/packit/v2 v2.11.0 // indirect
 	github.com/pkg/errors v0.9.1 // indirect
-	github.com/sirupsen/logrus v1.9.0 // indirect
+	github.com/sirupsen/logrus v1.9.3 // indirect
 	github.com/testcontainers/testcontainers-go v0.21.0 // indirect
 	github.com/ulikunitz/xz v0.5.11 // indirect
 	golang.org/x/exp v0.0.0-20230510235704-dd950f8aeaea // indirect
