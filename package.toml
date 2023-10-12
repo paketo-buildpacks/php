@@ -49,3 +49,6 @@
 
 [[dependencies]]
   uri = "urn:cnb:registry:paketo-buildpacks/ca-certificates@3.6.5"
+
+[[dependencies]]
+  uri = "urn:cnb:registry:paketo-buildpacks/watchexec@2.8.3"

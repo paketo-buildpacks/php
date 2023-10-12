@@ -20,6 +20,11 @@ api = "0.7"
     version = "3.6.5"
 
   [[order.group]]
+    id = "paketo-buildpacks/watchexec"
+    optional = true
+    version = "2.8.3"
+
+  [[order.group]]
     id = "paketo-buildpacks/php-dist"
     version = "2.1.13"
 
@@ -80,6 +85,11 @@ api = "0.7"
     id = "paketo-buildpacks/ca-certificates"
     optional = true
     version = "3.6.5"
+
+  [[order.group]]
+    id = "paketo-buildpacks/watchexec"
+    optional = true
+    version = "2.8.3"
 
   [[order.group]]
     id = "paketo-buildpacks/php-dist"
