@@ -116,9 +116,10 @@ func testPhpNginx(t *testing.T, context spec.G, it spec.S) {
 					WithBuildpacks(phpBuildpack).
 					WithPullPolicy("never").
 					WithEnv(map[string]string{
-						"BP_PHP_SERVER":     "nginx",
-						"BPE_SOME_VARIABLE": "fish-n-chips",
-						"BP_IMAGE_LABELS":   "cool-label=cool-value",
+						"BP_PHP_SERVER":          "nginx",
+						"BPE_SOME_VARIABLE":      "fish-n-chips",
+						"BP_IMAGE_LABELS":        "cool-label=cool-value",
+						"BP_LIVE_RELOAD_ENABLED": "true",
 					}).
 					Execute(name, source)
 				Expect(err).NotTo(HaveOccurred(), logs.String())
@@ -133,6 +134,7 @@ func testPhpNginx(t *testing.T, context spec.G, it spec.S) {
 				Eventually(container).Should(Serve(ContainSubstring("SUCCESS: date loads.")).OnPort(8080).WithEndpoint("/index.php?date"))
 
 				Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for CA Certificates")))
+				Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for Watchexec")))
 				Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for PHP Distribution")))
 				Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for Composer")))
 				Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for Composer Install")))
@@ -145,8 +147,8 @@ func testPhpNginx(t *testing.T, context spec.G, it spec.S) {
 				Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for Environment Variables")))
 				Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for Image Labels")))
 
-				Expect(image.Buildpacks[9].Key).To(Equal("paketo-buildpacks/environment-variables"))
-				Expect(image.Buildpacks[9].Layers["environment-variables"].Metadata["variables"]).To(Equal(map[string]interface{}{"SOME_VARIABLE": "fish-n-chips"}))
+				Expect(image.Buildpacks[10].Key).To(Equal("paketo-buildpacks/environment-variables"))
+				Expect(image.Buildpacks[10].Layers["environment-variables"].Metadata["variables"]).To(Equal(map[string]interface{}{"SOME_VARIABLE": "fish-n-chips"}))
 				Expect(image.Labels["cool-label"]).To(Equal("cool-value"))
 			})
 		})
