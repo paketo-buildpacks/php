@@ -26,7 +26,7 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/php-dist"
-    version = "2.2.1"
+    version = "2.2.2"
 
   [[order.group]]
     id = "paketo-buildpacks/composer"
@@ -44,25 +44,25 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/php-fpm"
-    version = "0.2.23"
+    version = "0.2.24"
 
   [[order.group]]
     id = "paketo-buildpacks/php-httpd"
-    version = "0.3.23"
+    version = "0.3.24"
 
   [[order.group]]
     id = "paketo-buildpacks/php-memcached-session-handler"
     optional = true
-    version = "0.2.22"
+    version = "0.2.23"
 
   [[order.group]]
     id = "paketo-buildpacks/php-redis-session-handler"
     optional = true
-    version = "0.2.23"
+    version = "0.2.24"
 
   [[order.group]]
     id = "paketo-buildpacks/php-start"
-    version = "0.4.23"
+    version = "0.4.24"
 
   [[order.group]]
     id = "paketo-buildpacks/procfile"
@@ -93,7 +93,7 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/php-dist"
-    version = "2.2.1"
+    version = "2.2.2"
 
   [[order.group]]
     id = "paketo-buildpacks/composer"
@@ -111,25 +111,25 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/php-fpm"
-    version = "0.2.23"
+    version = "0.2.24"
 
   [[order.group]]
     id = "paketo-buildpacks/php-nginx"
-    version = "0.3.9"
+    version = "0.3.10"
 
   [[order.group]]
     id = "paketo-buildpacks/php-memcached-session-handler"
     optional = true
-    version = "0.2.22"
+    version = "0.2.23"
 
   [[order.group]]
     id = "paketo-buildpacks/php-redis-session-handler"
     optional = true
-    version = "0.2.23"
+    version = "0.2.24"
 
   [[order.group]]
     id = "paketo-buildpacks/php-start"
-    version = "0.4.23"
+    version = "0.4.24"
 
   [[order.group]]
     id = "paketo-buildpacks/procfile"
@@ -150,7 +150,7 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/php-dist"
-    version = "2.2.1"
+    version = "2.2.2"
 
   [[order.group]]
     id = "paketo-buildpacks/composer"
@@ -164,17 +164,17 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/php-builtin-server"
-    version = "0.4.22"
+    version = "0.4.23"
 
   [[order.group]]
     id = "paketo-buildpacks/php-memcached-session-handler"
     optional = true
-    version = "0.2.22"
+    version = "0.2.23"
 
   [[order.group]]
     id = "paketo-buildpacks/php-redis-session-handler"
     optional = true
-    version = "0.2.23"
+    version = "0.2.24"
 
   [[order.group]]
     id = "paketo-buildpacks/procfile"
