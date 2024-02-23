@@ -6,7 +6,7 @@
   uri = "urn:cnb:registry:paketo-buildpacks/httpd@0.7.18"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/nginx@0.15.10"
+  uri = "urn:cnb:registry:paketo-buildpacks/nginx@0.15.11"
 
 [[dependencies]]
   uri = "urn:cnb:registry:paketo-buildpacks/composer@0.7.0"
