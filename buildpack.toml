@@ -22,7 +22,7 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/watchexec"
     optional = true
-    version = "3.1.0"
+    version = "3.1.1"
 
   [[order.group]]
     id = "paketo-buildpacks/php-dist"
@@ -89,7 +89,7 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/watchexec"
     optional = true
-    version = "3.1.0"
+    version = "3.1.1"
 
   [[order.group]]
     id = "paketo-buildpacks/php-dist"
@@ -107,7 +107,7 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/nginx"
-    version = "0.15.11"
+    version = "0.15.12"
 
   [[order.group]]
     id = "paketo-buildpacks/php-fpm"
