@@ -17,21 +17,21 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/ca-certificates"
     optional = true
-    version = "3.7.0"
+    version = "3.8.0"
 
   [[order.group]]
     id = "paketo-buildpacks/watchexec"
     optional = true
-    version = "2.10.0"
+    version = "3.2.0"
 
   [[order.group]]
     id = "paketo-buildpacks/php-dist"
-    version = "2.3.4"
+    version = "2.3.7"
 
   [[order.group]]
     id = "paketo-buildpacks/composer"
     optional = true
-    version = "0.7.3"
+    version = "0.7.5"
 
   [[order.group]]
     id = "paketo-buildpacks/composer-install"
@@ -40,11 +40,11 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/httpd"
-    version = "0.7.18"
+    version = "0.7.19"
 
   [[order.group]]
     id = "paketo-buildpacks/php-fpm"
-    version = "0.2.28"
+    version = "0.2.31"
 
   [[order.group]]
     id = "paketo-buildpacks/php-httpd"
@@ -58,7 +58,7 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/php-redis-session-handler"
     optional = true
-    version = "0.2.28"
+    version = "0.2.31"
 
   [[order.group]]
     id = "paketo-buildpacks/php-start"
@@ -67,38 +67,38 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/procfile"
     optional = true
-    version = "5.8.0"
+    version = "5.9.0"
 
   [[order.group]]
     id = "paketo-buildpacks/environment-variables"
     optional = true
-    version = "4.6.0"
+    version = "4.7.0"
 
   [[order.group]]
     id = "paketo-buildpacks/image-labels"
     optional = true
-    version = "4.6.0"
+    version = "4.7.0"
 
 [[order]]
 
   [[order.group]]
     id = "paketo-buildpacks/ca-certificates"
     optional = true
-    version = "3.7.0"
+    version = "3.8.0"
 
   [[order.group]]
     id = "paketo-buildpacks/watchexec"
     optional = true
-    version = "2.10.0"
+    version = "3.2.0"
 
   [[order.group]]
     id = "paketo-buildpacks/php-dist"
-    version = "2.3.4"
+    version = "2.3.7"
 
   [[order.group]]
     id = "paketo-buildpacks/composer"
     optional = true
-    version = "0.7.3"
+    version = "0.7.5"
 
   [[order.group]]
     id = "paketo-buildpacks/composer-install"
@@ -107,11 +107,11 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/nginx"
-    version = "0.15.11"
+    version = "0.16.0"
 
   [[order.group]]
     id = "paketo-buildpacks/php-fpm"
-    version = "0.2.28"
+    version = "0.2.31"
 
   [[order.group]]
     id = "paketo-buildpacks/php-nginx"
@@ -125,7 +125,7 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/php-redis-session-handler"
     optional = true
-    version = "0.2.28"
+    version = "0.2.31"
 
   [[order.group]]
     id = "paketo-buildpacks/php-start"
@@ -134,28 +134,28 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/procfile"
     optional = true
-    version = "5.8.0"
+    version = "5.9.0"
 
   [[order.group]]
     id = "paketo-buildpacks/environment-variables"
     optional = true
-    version = "4.6.0"
+    version = "4.7.0"
 
   [[order.group]]
     id = "paketo-buildpacks/image-labels"
     optional = true
-    version = "4.6.0"
+    version = "4.7.0"
 
 [[order]]
 
   [[order.group]]
     id = "paketo-buildpacks/php-dist"
-    version = "2.3.4"
+    version = "2.3.7"
 
   [[order.group]]
     id = "paketo-buildpacks/composer"
     optional = true
-    version = "0.7.3"
+    version = "0.7.5"
 
   [[order.group]]
     id = "paketo-buildpacks/composer-install"
@@ -164,7 +164,7 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/php-builtin-server"
-    version = "0.4.27"
+    version = "0.4.30"
 
   [[order.group]]
     id = "paketo-buildpacks/php-memcached-session-handler"
@@ -174,19 +174,19 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/php-redis-session-handler"
     optional = true
-    version = "0.2.28"
+    version = "0.2.31"
 
   [[order.group]]
     id = "paketo-buildpacks/procfile"
     optional = true
-    version = "5.8.0"
+    version = "5.9.0"
 
   [[order.group]]
     id = "paketo-buildpacks/environment-variables"
     optional = true
-    version = "4.6.0"
+    version = "4.7.0"
 
   [[order.group]]
     id = "paketo-buildpacks/image-labels"
     optional = true
-    version = "4.6.0"
+    version = "4.7.0"
