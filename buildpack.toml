@@ -17,7 +17,7 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/ca-certificates"
     optional = true
-    version = "3.8.0"
+    version = "3.8.2"
 
   [[order.group]]
     id = "paketo-buildpacks/watchexec"
@@ -31,7 +31,7 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/composer"
     optional = true
-    version = "0.7.7"
+    version = "0.7.8"
 
   [[order.group]]
     id = "paketo-buildpacks/composer-install"
@@ -84,7 +84,7 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/ca-certificates"
     optional = true
-    version = "3.8.0"
+    version = "3.8.2"
 
   [[order.group]]
     id = "paketo-buildpacks/watchexec"
@@ -98,7 +98,7 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/composer"
     optional = true
-    version = "0.7.7"
+    version = "0.7.8"
 
   [[order.group]]
     id = "paketo-buildpacks/composer-install"
@@ -107,7 +107,7 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/nginx"
-    version = "0.16.2"
+    version = "0.17.0"
 
   [[order.group]]
     id = "paketo-buildpacks/php-fpm"
@@ -155,7 +155,7 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/composer"
     optional = true
-    version = "0.7.7"
+    version = "0.7.8"
 
   [[order.group]]
     id = "paketo-buildpacks/composer-install"

@@ -6,10 +6,10 @@
   uri = "urn:cnb:registry:paketo-buildpacks/httpd@0.7.21"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/nginx@0.16.2"
+  uri = "urn:cnb:registry:paketo-buildpacks/nginx@0.17.0"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/composer@0.7.7"
+  uri = "urn:cnb:registry:paketo-buildpacks/composer@0.7.8"
 
 [[dependencies]]
   uri = "urn:cnb:registry:paketo-buildpacks/composer-install@0.3.25"
@@ -48,7 +48,7 @@
   uri = "urn:cnb:registry:paketo-buildpacks/image-labels@4.7.0"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/ca-certificates@3.8.0"
+  uri = "urn:cnb:registry:paketo-buildpacks/ca-certificates@3.8.2"
 
 [[dependencies]]
   uri = "urn:cnb:registry:paketo-buildpacks/watchexec@3.2.0"
