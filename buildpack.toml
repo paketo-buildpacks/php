@@ -22,7 +22,7 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/watchexec"
     optional = true
-    version = "3.2.0"
+    version = "3.2.1"
 
   [[order.group]]
     id = "paketo-buildpacks/php-dist"
@@ -31,7 +31,7 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/composer"
     optional = true
-    version = "0.7.8"
+    version = "0.7.9"
 
   [[order.group]]
     id = "paketo-buildpacks/composer-install"
@@ -62,7 +62,7 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/php-start"
-    version = "0.4.30"
+    version = "0.4.31"
 
   [[order.group]]
     id = "paketo-buildpacks/procfile"
@@ -89,7 +89,7 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/watchexec"
     optional = true
-    version = "3.2.0"
+    version = "3.2.1"
 
   [[order.group]]
     id = "paketo-buildpacks/php-dist"
@@ -98,7 +98,7 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/composer"
     optional = true
-    version = "0.7.8"
+    version = "0.7.9"
 
   [[order.group]]
     id = "paketo-buildpacks/composer-install"
@@ -129,7 +129,7 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/php-start"
-    version = "0.4.30"
+    version = "0.4.31"
 
   [[order.group]]
     id = "paketo-buildpacks/procfile"
@@ -155,7 +155,7 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/composer"
     optional = true
-    version = "0.7.8"
+    version = "0.7.9"
 
   [[order.group]]
     id = "paketo-buildpacks/composer-install"
