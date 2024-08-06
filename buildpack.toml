@@ -17,12 +17,12 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/ca-certificates"
     optional = true
-    version = "3.8.3"
+    version = "3.8.4"
 
   [[order.group]]
     id = "paketo-buildpacks/watchexec"
     optional = true
-    version = "3.2.1"
+    version = "3.2.2"
 
   [[order.group]]
     id = "paketo-buildpacks/php-dist"
@@ -44,11 +44,11 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/php-fpm"
-    version = "0.2.36"
+    version = "0.2.37"
 
   [[order.group]]
     id = "paketo-buildpacks/php-httpd"
-    version = "0.3.33"
+    version = "0.3.34"
 
   [[order.group]]
     id = "paketo-buildpacks/php-memcached-session-handler"
@@ -58,38 +58,38 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/php-redis-session-handler"
     optional = true
-    version = "0.2.37"
+    version = "0.2.39"
 
   [[order.group]]
     id = "paketo-buildpacks/php-start"
-    version = "0.4.34"
+    version = "0.4.36"
 
   [[order.group]]
     id = "paketo-buildpacks/procfile"
     optional = true
-    version = "5.9.0"
+    version = "5.9.1"
 
   [[order.group]]
     id = "paketo-buildpacks/environment-variables"
     optional = true
-    version = "4.7.0"
+    version = "4.7.1"
 
   [[order.group]]
     id = "paketo-buildpacks/image-labels"
     optional = true
-    version = "4.7.0"
+    version = "4.7.1"
 
 [[order]]
 
   [[order.group]]
     id = "paketo-buildpacks/ca-certificates"
     optional = true
-    version = "3.8.3"
+    version = "3.8.4"
 
   [[order.group]]
     id = "paketo-buildpacks/watchexec"
     optional = true
-    version = "3.2.1"
+    version = "3.2.2"
 
   [[order.group]]
     id = "paketo-buildpacks/php-dist"
@@ -111,11 +111,11 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/php-fpm"
-    version = "0.2.36"
+    version = "0.2.37"
 
   [[order.group]]
     id = "paketo-buildpacks/php-nginx"
-    version = "0.3.19"
+    version = "0.3.20"
 
   [[order.group]]
     id = "paketo-buildpacks/php-memcached-session-handler"
@@ -125,26 +125,26 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/php-redis-session-handler"
     optional = true
-    version = "0.2.37"
+    version = "0.2.39"
 
   [[order.group]]
     id = "paketo-buildpacks/php-start"
-    version = "0.4.34"
+    version = "0.4.36"
 
   [[order.group]]
     id = "paketo-buildpacks/procfile"
     optional = true
-    version = "5.9.0"
+    version = "5.9.1"
 
   [[order.group]]
     id = "paketo-buildpacks/environment-variables"
     optional = true
-    version = "4.7.0"
+    version = "4.7.1"
 
   [[order.group]]
     id = "paketo-buildpacks/image-labels"
     optional = true
-    version = "4.7.0"
+    version = "4.7.1"
 
 [[order]]
 
@@ -164,7 +164,7 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/php-builtin-server"
-    version = "0.4.36"
+    version = "0.4.37"
 
   [[order.group]]
     id = "paketo-buildpacks/php-memcached-session-handler"
@@ -174,19 +174,19 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/php-redis-session-handler"
     optional = true
-    version = "0.2.37"
+    version = "0.2.39"
 
   [[order.group]]
     id = "paketo-buildpacks/procfile"
     optional = true
-    version = "5.9.0"
+    version = "5.9.1"
 
   [[order.group]]
     id = "paketo-buildpacks/environment-variables"
     optional = true
-    version = "4.7.0"
+    version = "4.7.1"
 
   [[order.group]]
     id = "paketo-buildpacks/image-labels"
     optional = true
-    version = "4.7.0"
+    version = "4.7.1"
