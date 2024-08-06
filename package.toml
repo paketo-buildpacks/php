@@ -30,10 +30,10 @@
   uri = "urn:cnb:registry:paketo-buildpacks/php-fpm@0.2.37"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/php-start@0.4.35"
+  uri = "urn:cnb:registry:paketo-buildpacks/php-start@0.4.36"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/php-redis-session-handler@0.2.38"
+  uri = "urn:cnb:registry:paketo-buildpacks/php-redis-session-handler@0.2.39"
 
 [[dependencies]]
   uri = "urn:cnb:registry:paketo-buildpacks/php-memcached-session-handler@0.2.31"
