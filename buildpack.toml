@@ -26,12 +26,12 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/php-dist"
-    version = "2.3.12"
+    version = "2.3.13"
 
   [[order.group]]
     id = "paketo-buildpacks/composer"
     optional = true
-    version = "0.7.11"
+    version = "0.7.12"
 
   [[order.group]]
     id = "paketo-buildpacks/composer-install"
@@ -44,11 +44,11 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/php-fpm"
-    version = "0.2.39"
+    version = "0.2.40"
 
   [[order.group]]
     id = "paketo-buildpacks/php-httpd"
-    version = "0.3.37"
+    version = "0.3.38"
 
   [[order.group]]
     id = "paketo-buildpacks/php-memcached-session-handler"
@@ -62,7 +62,7 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/php-start"
-    version = "0.4.38"
+    version = "0.4.39"
 
   [[order.group]]
     id = "paketo-buildpacks/procfile"
@@ -93,12 +93,12 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/php-dist"
-    version = "2.3.12"
+    version = "2.3.13"
 
   [[order.group]]
     id = "paketo-buildpacks/composer"
     optional = true
-    version = "0.7.11"
+    version = "0.7.12"
 
   [[order.group]]
     id = "paketo-buildpacks/composer-install"
@@ -111,11 +111,11 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/php-fpm"
-    version = "0.2.39"
+    version = "0.2.40"
 
   [[order.group]]
     id = "paketo-buildpacks/php-nginx"
-    version = "0.3.23"
+    version = "0.3.24"
 
   [[order.group]]
     id = "paketo-buildpacks/php-memcached-session-handler"
@@ -129,7 +129,7 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/php-start"
-    version = "0.4.38"
+    version = "0.4.39"
 
   [[order.group]]
     id = "paketo-buildpacks/procfile"
@@ -150,12 +150,12 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/php-dist"
-    version = "2.3.12"
+    version = "2.3.13"
 
   [[order.group]]
     id = "paketo-buildpacks/composer"
     optional = true
-    version = "0.7.11"
+    version = "0.7.12"
 
   [[order.group]]
     id = "paketo-buildpacks/composer-install"

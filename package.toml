@@ -9,28 +9,28 @@
   uri = "urn:cnb:registry:paketo-buildpacks/nginx@0.17.6"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/composer@0.7.11"
+  uri = "urn:cnb:registry:paketo-buildpacks/composer@0.7.12"
 
 [[dependencies]]
   uri = "urn:cnb:registry:paketo-buildpacks/composer-install@0.3.28"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/php-dist@2.3.12"
+  uri = "urn:cnb:registry:paketo-buildpacks/php-dist@2.3.13"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/php-httpd@0.3.37"
+  uri = "urn:cnb:registry:paketo-buildpacks/php-httpd@0.3.38"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/php-nginx@0.3.23"
+  uri = "urn:cnb:registry:paketo-buildpacks/php-nginx@0.3.24"
 
 [[dependencies]]
   uri = "urn:cnb:registry:paketo-buildpacks/php-builtin-server@0.4.39"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/php-fpm@0.2.39"
+  uri = "urn:cnb:registry:paketo-buildpacks/php-fpm@0.2.40"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/php-start@0.4.38"
+  uri = "urn:cnb:registry:paketo-buildpacks/php-start@0.4.39"
 
 [[dependencies]]
   uri = "urn:cnb:registry:paketo-buildpacks/php-redis-session-handler@0.2.41"
