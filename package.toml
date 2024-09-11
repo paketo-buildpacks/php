@@ -3,34 +3,34 @@
   uri = "build/buildpack.tgz"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/httpd@0.7.27"
+  uri = "urn:cnb:registry:paketo-buildpacks/httpd@0.7.29"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/nginx@0.17.6"
+  uri = "urn:cnb:registry:paketo-buildpacks/nginx@0.17.8"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/composer@0.7.11"
+  uri = "urn:cnb:registry:paketo-buildpacks/composer@0.7.13"
 
 [[dependencies]]
   uri = "urn:cnb:registry:paketo-buildpacks/composer-install@0.3.28"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/php-dist@2.3.12"
+  uri = "urn:cnb:registry:paketo-buildpacks/php-dist@2.3.14"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/php-httpd@0.3.37"
+  uri = "urn:cnb:registry:paketo-buildpacks/php-httpd@0.3.39"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/php-nginx@0.3.23"
+  uri = "urn:cnb:registry:paketo-buildpacks/php-nginx@0.3.25"
 
 [[dependencies]]
   uri = "urn:cnb:registry:paketo-buildpacks/php-builtin-server@0.4.39"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/php-fpm@0.2.39"
+  uri = "urn:cnb:registry:paketo-buildpacks/php-fpm@0.2.41"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/php-start@0.4.38"
+  uri = "urn:cnb:registry:paketo-buildpacks/php-start@0.4.41"
 
 [[dependencies]]
   uri = "urn:cnb:registry:paketo-buildpacks/php-redis-session-handler@0.2.41"
@@ -39,16 +39,16 @@
   uri = "urn:cnb:registry:paketo-buildpacks/php-memcached-session-handler@0.2.32"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/procfile@5.9.1"
+  uri = "urn:cnb:registry:paketo-buildpacks/procfile@5.9.2"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/environment-variables@4.7.1"
+  uri = "urn:cnb:registry:paketo-buildpacks/environment-variables@4.7.2"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/image-labels@4.7.1"
+  uri = "urn:cnb:registry:paketo-buildpacks/image-labels@4.7.2"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/ca-certificates@3.8.4"
+  uri = "urn:cnb:registry:paketo-buildpacks/ca-certificates@3.8.5"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/watchexec@3.2.2"
+  uri = "urn:cnb:registry:paketo-buildpacks/watchexec@3.2.3"
