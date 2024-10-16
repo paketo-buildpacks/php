@@ -3,19 +3,19 @@
   uri = "build/buildpack.tgz"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/httpd@0.7.30"
+  uri = "urn:cnb:registry:paketo-buildpacks/httpd@0.7.31"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/nginx@0.17.9"
+  uri = "urn:cnb:registry:paketo-buildpacks/nginx@0.17.10"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/composer@0.7.13"
+  uri = "urn:cnb:registry:paketo-buildpacks/composer@0.7.14"
 
 [[dependencies]]
   uri = "urn:cnb:registry:paketo-buildpacks/composer-install@0.3.28"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/php-dist@2.3.17"
+  uri = "urn:cnb:registry:paketo-buildpacks/php-dist@2.3.18"
 
 [[dependencies]]
   uri = "urn:cnb:registry:paketo-buildpacks/php-httpd@0.3.40"
@@ -51,4 +51,4 @@
   uri = "urn:cnb:registry:paketo-buildpacks/ca-certificates@3.8.6"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/watchexec@3.2.4"
+  uri = "urn:cnb:registry:paketo-buildpacks/watchexec@3.3.0"
