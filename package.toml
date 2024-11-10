@@ -39,7 +39,7 @@
   uri = "urn:cnb:registry:paketo-buildpacks/php-memcached-session-handler@0.2.32"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/procfile@5.10.0"
+  uri = "urn:cnb:registry:paketo-buildpacks/procfile@5.10.1"
 
 [[dependencies]]
   uri = "urn:cnb:registry:paketo-buildpacks/environment-variables@4.7.3"
