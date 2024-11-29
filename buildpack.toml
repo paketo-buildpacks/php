@@ -26,12 +26,12 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/php-dist"
-    version = "2.3.21"
+    version = "2.3.22"
 
   [[order.group]]
     id = "paketo-buildpacks/composer"
     optional = true
-    version = "0.7.14"
+    version = "0.7.15"
 
   [[order.group]]
     id = "paketo-buildpacks/composer-install"
@@ -40,7 +40,7 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/httpd"
-    version = "0.7.33"
+    version = "0.7.34"
 
   [[order.group]]
     id = "paketo-buildpacks/php-fpm"
@@ -93,12 +93,12 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/php-dist"
-    version = "2.3.21"
+    version = "2.3.22"
 
   [[order.group]]
     id = "paketo-buildpacks/composer"
     optional = true
-    version = "0.7.14"
+    version = "0.7.15"
 
   [[order.group]]
     id = "paketo-buildpacks/composer-install"
@@ -150,12 +150,12 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/php-dist"
-    version = "2.3.21"
+    version = "2.3.22"
 
   [[order.group]]
     id = "paketo-buildpacks/composer"
     optional = true
-    version = "0.7.14"
+    version = "0.7.15"
 
   [[order.group]]
     id = "paketo-buildpacks/composer-install"
