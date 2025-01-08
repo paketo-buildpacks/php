@@ -3,7 +3,7 @@
   uri = "build/buildpack.tgz"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/httpd@0.7.39"
+  uri = "urn:cnb:registry:paketo-buildpacks/httpd@0.7.40"
 
 [[dependencies]]
   uri = "urn:cnb:registry:paketo-buildpacks/nginx@0.17.16"
@@ -15,7 +15,7 @@
   uri = "urn:cnb:registry:paketo-buildpacks/composer-install@0.3.28"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/php-dist@2.3.27"
+  uri = "urn:cnb:registry:paketo-buildpacks/php-dist@2.3.28"
 
 [[dependencies]]
   uri = "urn:cnb:registry:paketo-buildpacks/php-httpd@0.3.42"
