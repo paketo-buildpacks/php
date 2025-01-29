@@ -26,7 +26,7 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/php-dist"
-    version = "2.3.29"
+    version = "2.3.30"
 
   [[order.group]]
     id = "paketo-buildpacks/composer"
@@ -40,15 +40,15 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/httpd"
-    version = "0.7.41"
+    version = "0.7.42"
 
   [[order.group]]
     id = "paketo-buildpacks/php-fpm"
-    version = "0.2.45"
+    version = "0.2.46"
 
   [[order.group]]
     id = "paketo-buildpacks/php-httpd"
-    version = "0.3.43"
+    version = "0.3.44"
 
   [[order.group]]
     id = "paketo-buildpacks/php-memcached-session-handler"
@@ -62,7 +62,7 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/php-start"
-    version = "0.4.45"
+    version = "0.4.46"
 
   [[order.group]]
     id = "paketo-buildpacks/procfile"
@@ -93,7 +93,7 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/php-dist"
-    version = "2.3.29"
+    version = "2.3.30"
 
   [[order.group]]
     id = "paketo-buildpacks/composer"
@@ -111,7 +111,7 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/php-fpm"
-    version = "0.2.45"
+    version = "0.2.46"
 
   [[order.group]]
     id = "paketo-buildpacks/php-nginx"
@@ -129,7 +129,7 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/php-start"
-    version = "0.4.45"
+    version = "0.4.46"
 
   [[order.group]]
     id = "paketo-buildpacks/procfile"
@@ -150,7 +150,7 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/php-dist"
-    version = "2.3.29"
+    version = "2.3.30"
 
   [[order.group]]
     id = "paketo-buildpacks/composer"
