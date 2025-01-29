@@ -17,7 +17,7 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/ca-certificates"
     optional = true
-    version = "3.8.6"
+    version = "3.9.0"
 
   [[order.group]]
     id = "paketo-buildpacks/watchexec"
@@ -26,12 +26,12 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/php-dist"
-    version = "2.3.25"
+    version = "2.3.30"
 
   [[order.group]]
     id = "paketo-buildpacks/composer"
     optional = true
-    version = "0.7.15"
+    version = "0.7.16"
 
   [[order.group]]
     id = "paketo-buildpacks/composer-install"
@@ -40,15 +40,15 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/httpd"
-    version = "0.7.37"
+    version = "0.7.42"
 
   [[order.group]]
     id = "paketo-buildpacks/php-fpm"
-    version = "0.2.43"
+    version = "0.2.46"
 
   [[order.group]]
     id = "paketo-buildpacks/php-httpd"
-    version = "0.3.41"
+    version = "0.3.44"
 
   [[order.group]]
     id = "paketo-buildpacks/php-memcached-session-handler"
@@ -62,29 +62,29 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/php-start"
-    version = "0.4.43"
+    version = "0.4.46"
 
   [[order.group]]
     id = "paketo-buildpacks/procfile"
     optional = true
-    version = "5.10.1"
+    version = "5.10.2"
 
   [[order.group]]
     id = "paketo-buildpacks/environment-variables"
     optional = true
-    version = "4.7.3"
+    version = "4.8.0"
 
   [[order.group]]
     id = "paketo-buildpacks/image-labels"
     optional = true
-    version = "4.7.3"
+    version = "4.8.0"
 
 [[order]]
 
   [[order.group]]
     id = "paketo-buildpacks/ca-certificates"
     optional = true
-    version = "3.8.6"
+    version = "3.9.0"
 
   [[order.group]]
     id = "paketo-buildpacks/watchexec"
@@ -93,12 +93,12 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/php-dist"
-    version = "2.3.25"
+    version = "2.3.30"
 
   [[order.group]]
     id = "paketo-buildpacks/composer"
     optional = true
-    version = "0.7.15"
+    version = "0.7.16"
 
   [[order.group]]
     id = "paketo-buildpacks/composer-install"
@@ -107,15 +107,15 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/nginx"
-    version = "0.17.15"
+    version = "0.17.17"
 
   [[order.group]]
     id = "paketo-buildpacks/php-fpm"
-    version = "0.2.43"
+    version = "0.2.46"
 
   [[order.group]]
     id = "paketo-buildpacks/php-nginx"
-    version = "0.3.27"
+    version = "0.3.29"
 
   [[order.group]]
     id = "paketo-buildpacks/php-memcached-session-handler"
@@ -129,33 +129,33 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/php-start"
-    version = "0.4.43"
+    version = "0.4.46"
 
   [[order.group]]
     id = "paketo-buildpacks/procfile"
     optional = true
-    version = "5.10.1"
+    version = "5.10.2"
 
   [[order.group]]
     id = "paketo-buildpacks/environment-variables"
     optional = true
-    version = "4.7.3"
+    version = "4.8.0"
 
   [[order.group]]
     id = "paketo-buildpacks/image-labels"
     optional = true
-    version = "4.7.3"
+    version = "4.8.0"
 
 [[order]]
 
   [[order.group]]
     id = "paketo-buildpacks/php-dist"
-    version = "2.3.25"
+    version = "2.3.30"
 
   [[order.group]]
     id = "paketo-buildpacks/composer"
     optional = true
-    version = "0.7.15"
+    version = "0.7.16"
 
   [[order.group]]
     id = "paketo-buildpacks/composer-install"
@@ -179,14 +179,14 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/procfile"
     optional = true
-    version = "5.10.1"
+    version = "5.10.2"
 
   [[order.group]]
     id = "paketo-buildpacks/environment-variables"
     optional = true
-    version = "4.7.3"
+    version = "4.8.0"
 
   [[order.group]]
     id = "paketo-buildpacks/image-labels"
     optional = true
-    version = "4.7.3"
+    version = "4.8.0"
