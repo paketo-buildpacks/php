@@ -26,12 +26,12 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/php-dist"
-    version = "2.10.16"
+    version = "2.10.17"
 
   [[order.group]]
     id = "paketo-buildpacks/composer"
     optional = true
-    version = "0.8.11"
+    version = "0.8.12"
 
   [[order.group]]
     id = "paketo-buildpacks/composer-install"
@@ -40,29 +40,29 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/httpd"
-    version = "1.0.14"
+    version = "1.0.15"
 
   [[order.group]]
     id = "paketo-buildpacks/php-fpm"
-    version = "0.2.60"
+    version = "0.2.61"
 
   [[order.group]]
     id = "paketo-buildpacks/php-httpd"
-    version = "0.3.57"
+    version = "0.3.58"
 
   [[order.group]]
     id = "paketo-buildpacks/php-memcached-session-handler"
     optional = true
-    version = "0.2.34"
+    version = "0.2.35"
 
   [[order.group]]
     id = "paketo-buildpacks/php-redis-session-handler"
     optional = true
-    version = "0.2.47"
+    version = "0.2.48"
 
   [[order.group]]
     id = "paketo-buildpacks/php-start"
-    version = "0.5.5"
+    version = "0.5.6"
 
   [[order.group]]
     id = "paketo-buildpacks/procfile"
@@ -93,12 +93,12 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/php-dist"
-    version = "2.10.16"
+    version = "2.10.17"
 
   [[order.group]]
     id = "paketo-buildpacks/composer"
     optional = true
-    version = "0.8.11"
+    version = "0.8.12"
 
   [[order.group]]
     id = "paketo-buildpacks/composer-install"
@@ -107,29 +107,29 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/nginx"
-    version = "1.0.31"
+    version = "1.0.32"
 
   [[order.group]]
     id = "paketo-buildpacks/php-fpm"
-    version = "0.2.60"
+    version = "0.2.61"
 
   [[order.group]]
     id = "paketo-buildpacks/php-nginx"
-    version = "0.3.36"
+    version = "0.3.37"
 
   [[order.group]]
     id = "paketo-buildpacks/php-memcached-session-handler"
     optional = true
-    version = "0.2.34"
+    version = "0.2.35"
 
   [[order.group]]
     id = "paketo-buildpacks/php-redis-session-handler"
     optional = true
-    version = "0.2.47"
+    version = "0.2.48"
 
   [[order.group]]
     id = "paketo-buildpacks/php-start"
-    version = "0.5.5"
+    version = "0.5.6"
 
   [[order.group]]
     id = "paketo-buildpacks/procfile"
@@ -150,12 +150,12 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/php-dist"
-    version = "2.10.16"
+    version = "2.10.17"
 
   [[order.group]]
     id = "paketo-buildpacks/composer"
     optional = true
-    version = "0.8.11"
+    version = "0.8.12"
 
   [[order.group]]
     id = "paketo-buildpacks/composer-install"
@@ -164,17 +164,17 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/php-builtin-server"
-    version = "0.4.45"
+    version = "0.4.46"
 
   [[order.group]]
     id = "paketo-buildpacks/php-memcached-session-handler"
     optional = true
-    version = "0.2.34"
+    version = "0.2.35"
 
   [[order.group]]
     id = "paketo-buildpacks/php-redis-session-handler"
     optional = true
-    version = "0.2.47"
+    version = "0.2.48"
 
   [[order.group]]
     id = "paketo-buildpacks/procfile"
