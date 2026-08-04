@@ -15,7 +15,7 @@
   uri = "urn:cnb:registry:paketo-buildpacks/composer-install@0.3.28"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/php-dist@2.10.18"
+  uri = "urn:cnb:registry:paketo-buildpacks/php-dist@2.10.19"
 
 [[dependencies]]
   uri = "urn:cnb:registry:paketo-buildpacks/php-httpd@0.3.58"
