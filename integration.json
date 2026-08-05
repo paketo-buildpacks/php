@@ -1,6 +1,6 @@
 {
   "builders": [
     "index.docker.io/paketobuildpacks/builder-jammy-buildpackless-full:latest",
-    "index.docker.io/paketobuildpacks/builder:buildpackless-full"
+    "index.docker.io/paketobuildpacks/ubuntu-noble-builder-buildpackless:latest"
    ]
 }
