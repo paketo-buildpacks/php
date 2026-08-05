@@ -2,19 +2,19 @@ name: Update buildpack.toml
 
 on:
   schedule:
-  - cron: '1 6 * * *' # daily at 06:01 UTC
+  - cron: '1 6 * * *'  # daily at 06:01 UTC
   workflow_dispatch: {}
 
 concurrency: buildpack_update
 
 jobs:
   update-buildpack-toml:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     name: Update buildpack.toml
     steps:
 
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v6
 
     - name: Checkout Branch
       uses: paketo-buildpacks/github-config/actions/pull-request/checkout-branch@main
@@ -59,7 +59,7 @@ jobs:
 
   failure:
     name: Alert on Failure
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     needs: [update-buildpack-toml]
     if: ${{ always() && needs.update-buildpack-toml.result == 'failure' }}
     steps:
