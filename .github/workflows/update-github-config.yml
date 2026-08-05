@@ -2,7 +2,7 @@ name: Update shared github-config
 
 on:
   schedule:
-  - cron: '20 17 * * *' # daily at 17:20 UTC
+  - cron: '20 17 * * *'  # daily at 17:20 UTC
   workflow_dispatch: {}
 
 concurrency: github_config_update
@@ -10,16 +10,16 @@ concurrency: github_config_update
 jobs:
   build:
     name: Create PR to update shared files
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
 
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v6
       with:
         token: ${{ secrets.PAKETO_BOT_GITHUB_TOKEN }}
 
     - name: Checkout github-config
-      uses: actions/checkout@v3
+      uses: actions/checkout@v6
       with:
         repository: paketo-buildpacks/github-config
         path: github-config
@@ -63,7 +63,7 @@ jobs:
 
   failure:
     name: Alert on Failure
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     needs: [build]
     if: ${{ always() && needs.build.result == 'failure' }}
     steps:
