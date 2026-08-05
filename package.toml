@@ -3,40 +3,40 @@
   uri = "build/buildpack.tgz"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/httpd@1.0.15"
+  uri = "urn:cnb:registry:paketo-buildpacks/httpd@1.0.16"
 
 [[dependencies]]
   uri = "urn:cnb:registry:paketo-buildpacks/nginx@1.0.32"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/composer@0.8.12"
+  uri = "urn:cnb:registry:paketo-buildpacks/composer@0.8.13"
 
 [[dependencies]]
   uri = "urn:cnb:registry:paketo-buildpacks/composer-install@0.3.28"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/php-dist@2.10.19"
+  uri = "urn:cnb:registry:paketo-buildpacks/php-dist@2.10.20"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/php-httpd@0.3.58"
+  uri = "urn:cnb:registry:paketo-buildpacks/php-httpd@0.3.59"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/php-nginx@0.3.37"
+  uri = "urn:cnb:registry:paketo-buildpacks/php-nginx@0.3.38"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/php-builtin-server@0.4.46"
+  uri = "urn:cnb:registry:paketo-buildpacks/php-builtin-server@0.4.47"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/php-fpm@0.2.61"
+  uri = "urn:cnb:registry:paketo-buildpacks/php-fpm@0.2.62"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/php-start@0.5.6"
+  uri = "urn:cnb:registry:paketo-buildpacks/php-start@0.5.7"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/php-redis-session-handler@0.2.48"
+  uri = "urn:cnb:registry:paketo-buildpacks/php-redis-session-handler@0.2.49"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/php-memcached-session-handler@0.2.35"
+  uri = "urn:cnb:registry:paketo-buildpacks/php-memcached-session-handler@0.2.36"
 
 [[dependencies]]
   uri = "urn:cnb:registry:paketo-buildpacks/procfile@5.13.6"
