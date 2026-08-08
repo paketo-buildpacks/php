@@ -3,52 +3,60 @@
   uri = "build/buildpack.tgz"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/httpd@1.0.16"
+  uri = "docker://docker.io/paketobuildpacks/httpd:1.0.16"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/nginx@1.0.32"
+  uri = "docker://docker.io/paketobuildpacks/nginx:1.0.32"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/composer@0.8.13"
+  uri = "docker://docker.io/paketobuildpacks/composer:0.8.13"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/composer-install@0.3.29"
+  uri = "docker://docker.io/paketobuildpacks/composer-install:0.3.29"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/php-dist@2.10.20"
+  uri = "docker://docker.io/paketobuildpacks/php-dist:2.10.20"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/php-httpd@0.3.59"
+  uri = "docker://docker.io/paketobuildpacks/php-httpd:0.3.59"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/php-nginx@0.3.38"
+  uri = "docker://docker.io/paketobuildpacks/php-nginx:0.3.38"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/php-builtin-server@0.4.47"
+  uri = "docker://docker.io/paketobuildpacks/php-builtin-server:0.4.47"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/php-fpm@0.2.62"
+  uri = "docker://docker.io/paketobuildpacks/php-fpm:0.2.62"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/php-start@0.5.7"
+  uri = "docker://docker.io/paketobuildpacks/php-start:0.5.7"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/php-redis-session-handler@0.2.49"
+  uri = "docker://docker.io/paketobuildpacks/php-redis-session-handler:0.2.49"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/php-memcached-session-handler@0.2.36"
+  uri = "docker://docker.io/paketobuildpacks/php-memcached-session-handler:0.2.36"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/procfile@5.13.6"
+  uri = "docker://docker.io/paketobuildpacks/procfile:5.13.6"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/environment-variables@4.11.6"
+  uri = "docker://docker.io/paketobuildpacks/environment-variables:4.11.6"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/image-labels@4.12.6"
+  uri = "docker://docker.io/paketobuildpacks/image-labels:4.12.6"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/ca-certificates@3.12.6"
+  uri = "docker://docker.io/paketobuildpacks/ca-certificates:3.12.6"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/watchexec@3.9.7"
+  uri = "docker://docker.io/paketobuildpacks/watchexec:3.9.7"
+
+[[targets]]
+  arch = "amd64"
+  os = "linux"
+
+[[targets]]
+  arch = "arm64"
+  os = "linux"
