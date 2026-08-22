@@ -17,16 +17,16 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/ca-certificates"
     optional = true
-    version = "3.12.6"
+    version = "3.12.7"
 
   [[order.group]]
     id = "paketo-buildpacks/watchexec"
     optional = true
-    version = "3.9.7"
+    version = "3.9.8"
 
   [[order.group]]
     id = "paketo-buildpacks/php-dist"
-    version = "2.10.22"
+    version = "2.10.23"
 
   [[order.group]]
     id = "paketo-buildpacks/composer"
@@ -67,33 +67,33 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/procfile"
     optional = true
-    version = "5.13.6"
+    version = "5.13.7"
 
   [[order.group]]
     id = "paketo-buildpacks/environment-variables"
     optional = true
-    version = "4.11.6"
+    version = "4.11.7"
 
   [[order.group]]
     id = "paketo-buildpacks/image-labels"
     optional = true
-    version = "4.12.6"
+    version = "4.12.7"
 
 [[order]]
 
   [[order.group]]
     id = "paketo-buildpacks/ca-certificates"
     optional = true
-    version = "3.12.6"
+    version = "3.12.7"
 
   [[order.group]]
     id = "paketo-buildpacks/watchexec"
     optional = true
-    version = "3.9.7"
+    version = "3.9.8"
 
   [[order.group]]
     id = "paketo-buildpacks/php-dist"
-    version = "2.10.22"
+    version = "2.10.23"
 
   [[order.group]]
     id = "paketo-buildpacks/composer"
@@ -134,23 +134,23 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/procfile"
     optional = true
-    version = "5.13.6"
+    version = "5.13.7"
 
   [[order.group]]
     id = "paketo-buildpacks/environment-variables"
     optional = true
-    version = "4.11.6"
+    version = "4.11.7"
 
   [[order.group]]
     id = "paketo-buildpacks/image-labels"
     optional = true
-    version = "4.12.6"
+    version = "4.12.7"
 
 [[order]]
 
   [[order.group]]
     id = "paketo-buildpacks/php-dist"
-    version = "2.10.22"
+    version = "2.10.23"
 
   [[order.group]]
     id = "paketo-buildpacks/composer"
@@ -179,14 +179,14 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/procfile"
     optional = true
-    version = "5.13.6"
+    version = "5.13.7"
 
   [[order.group]]
     id = "paketo-buildpacks/environment-variables"
     optional = true
-    version = "4.11.6"
+    version = "4.11.7"
 
   [[order.group]]
     id = "paketo-buildpacks/image-labels"
     optional = true
-    version = "4.12.6"
+    version = "4.12.7"
