@@ -27,7 +27,7 @@
   uri = "docker://docker.io/paketobuildpacks/php-builtin-server:0.4.49"
 
 [[dependencies]]
-  uri = "docker://docker.io/paketobuildpacks/php-fpm:0.2.64"
+  uri = "docker://docker.io/paketobuildpacks/php-fpm:0.2.65"
 
 [[dependencies]]
   uri = "docker://docker.io/paketobuildpacks/php-start:0.5.9"
