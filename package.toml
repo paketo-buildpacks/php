@@ -3,10 +3,10 @@
   uri = "build/buildpack.tgz"
 
 [[dependencies]]
-  uri = "docker://docker.io/paketobuildpacks/httpd:1.0.19"
+  uri = "docker://docker.io/paketobuildpacks/httpd:1.1.0"
 
 [[dependencies]]
-  uri = "docker://docker.io/paketobuildpacks/nginx:1.1.2"
+  uri = "docker://docker.io/paketobuildpacks/nginx:1.2.0"
 
 [[dependencies]]
   uri = "docker://docker.io/paketobuildpacks/composer:0.8.16"
