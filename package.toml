@@ -3,40 +3,40 @@
   uri = "build/buildpack.tgz"
 
 [[dependencies]]
-  uri = "docker://docker.io/paketobuildpacks/httpd:1.1.1"
+  uri = "docker://docker.io/paketobuildpacks/httpd:1.1.2"
 
 [[dependencies]]
   uri = "docker://docker.io/paketobuildpacks/nginx:1.2.0"
 
 [[dependencies]]
-  uri = "docker://docker.io/paketobuildpacks/composer:0.8.17"
+  uri = "docker://docker.io/paketobuildpacks/composer:0.8.18"
 
 [[dependencies]]
-  uri = "docker://docker.io/paketobuildpacks/composer-install:0.3.33"
+  uri = "docker://docker.io/paketobuildpacks/composer-install:0.3.34"
 
 [[dependencies]]
-  uri = "docker://docker.io/paketobuildpacks/php-dist:2.10.25"
+  uri = "docker://docker.io/paketobuildpacks/php-dist:2.10.26"
 
 [[dependencies]]
-  uri = "docker://docker.io/paketobuildpacks/php-httpd:0.3.63"
+  uri = "docker://docker.io/paketobuildpacks/php-httpd:0.3.64"
 
 [[dependencies]]
-  uri = "docker://docker.io/paketobuildpacks/php-nginx:0.3.42"
+  uri = "docker://docker.io/paketobuildpacks/php-nginx:0.3.43"
 
 [[dependencies]]
-  uri = "docker://docker.io/paketobuildpacks/php-builtin-server:0.4.51"
+  uri = "docker://docker.io/paketobuildpacks/php-builtin-server:0.4.52"
 
 [[dependencies]]
-  uri = "docker://docker.io/paketobuildpacks/php-fpm:0.2.67"
+  uri = "docker://docker.io/paketobuildpacks/php-fpm:0.2.68"
 
 [[dependencies]]
-  uri = "docker://docker.io/paketobuildpacks/php-start:0.5.11"
+  uri = "docker://docker.io/paketobuildpacks/php-start:0.5.12"
 
 [[dependencies]]
-  uri = "docker://docker.io/paketobuildpacks/php-redis-session-handler:0.2.53"
+  uri = "docker://docker.io/paketobuildpacks/php-redis-session-handler:0.2.54"
 
 [[dependencies]]
-  uri = "docker://docker.io/paketobuildpacks/php-memcached-session-handler:0.2.40"
+  uri = "docker://docker.io/paketobuildpacks/php-memcached-session-handler:0.2.41"
 
 [[dependencies]]
   uri = "docker://docker.io/paketobuildpacks/procfile:5.13.7"
@@ -51,7 +51,7 @@
   uri = "docker://docker.io/paketobuildpacks/ca-certificates:3.12.7"
 
 [[dependencies]]
-  uri = "docker://docker.io/paketobuildpacks/watchexec:3.9.8"
+  uri = "docker://docker.io/paketobuildpacks/watchexec:3.10.0"
 
 [[targets]]
   arch = "amd64"
