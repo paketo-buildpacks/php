@@ -3,55 +3,55 @@
   uri = "build/buildpack.tgz"
 
 [[dependencies]]
-  uri = "docker://docker.io/paketobuildpacks/httpd:1.1.3"
+  uri = "docker://docker.io/paketobuildpacks/httpd:1.1.4"
 
 [[dependencies]]
-  uri = "docker://docker.io/paketobuildpacks/nginx:1.2.1"
+  uri = "docker://docker.io/paketobuildpacks/nginx:1.2.2"
 
 [[dependencies]]
-  uri = "docker://docker.io/paketobuildpacks/composer:0.8.19"
+  uri = "docker://docker.io/paketobuildpacks/composer:0.8.20"
 
 [[dependencies]]
-  uri = "docker://docker.io/paketobuildpacks/composer-install:0.3.35"
+  uri = "docker://docker.io/paketobuildpacks/composer-install:0.3.36"
 
 [[dependencies]]
-  uri = "docker://docker.io/paketobuildpacks/php-dist:2.10.27"
+  uri = "docker://docker.io/paketobuildpacks/php-dist:2.10.28"
 
 [[dependencies]]
-  uri = "docker://docker.io/paketobuildpacks/php-httpd:0.3.65"
+  uri = "docker://docker.io/paketobuildpacks/php-httpd:0.3.66"
 
 [[dependencies]]
-  uri = "docker://docker.io/paketobuildpacks/php-nginx:0.3.44"
+  uri = "docker://docker.io/paketobuildpacks/php-nginx:0.3.45"
 
 [[dependencies]]
-  uri = "docker://docker.io/paketobuildpacks/php-builtin-server:0.4.53"
+  uri = "docker://docker.io/paketobuildpacks/php-builtin-server:0.4.54"
 
 [[dependencies]]
-  uri = "docker://docker.io/paketobuildpacks/php-fpm:0.2.69"
+  uri = "docker://docker.io/paketobuildpacks/php-fpm:0.2.70"
 
 [[dependencies]]
-  uri = "docker://docker.io/paketobuildpacks/php-start:0.5.13"
+  uri = "docker://docker.io/paketobuildpacks/php-start:0.5.14"
 
 [[dependencies]]
-  uri = "docker://docker.io/paketobuildpacks/php-redis-session-handler:0.2.55"
+  uri = "docker://docker.io/paketobuildpacks/php-redis-session-handler:0.2.56"
 
 [[dependencies]]
-  uri = "docker://docker.io/paketobuildpacks/php-memcached-session-handler:0.2.42"
+  uri = "docker://docker.io/paketobuildpacks/php-memcached-session-handler:0.2.43"
 
 [[dependencies]]
-  uri = "docker://docker.io/paketobuildpacks/procfile:5.15.0"
+  uri = "docker://docker.io/paketobuildpacks/procfile:5.15.1"
 
 [[dependencies]]
   uri = "docker://docker.io/paketobuildpacks/environment-variables:4.12.0"
 
 [[dependencies]]
-  uri = "docker://docker.io/paketobuildpacks/image-labels:4.14.0"
+  uri = "docker://docker.io/paketobuildpacks/image-labels:4.14.1"
 
 [[dependencies]]
-  uri = "docker://docker.io/paketobuildpacks/ca-certificates:3.13.0"
+  uri = "docker://docker.io/paketobuildpacks/ca-certificates:3.14.0"
 
 [[dependencies]]
-  uri = "docker://docker.io/paketobuildpacks/watchexec:3.10.0"
+  uri = "docker://docker.io/paketobuildpacks/watchexec:3.11.0"
 
 [[targets]]
   arch = "amd64"
