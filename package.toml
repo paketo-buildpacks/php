@@ -15,7 +15,7 @@
   uri = "docker://docker.io/paketobuildpacks/composer-install:0.3.39"
 
 [[dependencies]]
-  uri = "docker://docker.io/paketobuildpacks/php-dist:2.10.32"
+  uri = "docker://docker.io/paketobuildpacks/php-dist:2.10.33"
 
 [[dependencies]]
   uri = "docker://docker.io/paketobuildpacks/php-httpd:0.3.70"
